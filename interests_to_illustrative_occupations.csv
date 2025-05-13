@@ -1,0 +1,187 @@
+﻿PK,Interests Element ID,Interests Element Name,Interest Type,O*NET-SOC Code,Title
+1,1.B.1.a,Realistic,General,17-3024.01,Robotics Technicians
+2,1.B.1.a,Realistic,General,45-2091.00,Agricultural Equipment Operators
+3,1.B.1.a,Realistic,General,47-2031.00,Carpenters
+4,1.B.1.a,Realistic,General,53-3052.00,"Bus Drivers, Transit and Intercity"
+5,1.B.1.b,Investigative,General,19-1029.04,Biologists
+6,1.B.1.b,Investigative,General,19-1042.00,"Medical Scientists, Except Epidemiologists"
+7,1.B.1.b,Investigative,General,19-2031.00,Chemists
+8,1.B.1.b,Investigative,General,19-3041.00,Sociologists
+9,1.B.1.c,Artistic,General,27-1012.00,Craft Artists
+10,1.B.1.c,Artistic,General,27-1013.00,"Fine Artists, Including Painters, Sculptors, and Illustrators"
+11,1.B.1.c,Artistic,General,27-2011.00,Actors
+12,1.B.1.c,Artistic,General,27-2042.00,Musicians and Singers
+13,1.B.1.d,Social,General,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors"
+14,1.B.1.d,Social,General,21-1021.00,"Child, Family, and School Social Workers"
+15,1.B.1.d,Social,General,25-2021.00,"Elementary School Teachers, Except Special Education"
+16,1.B.1.d,Social,General,29-1141.00,Registered Nurses
+17,1.B.1.e,Enterprising,General,11-2011.00,Advertising and Promotions Managers
+18,1.B.1.e,Enterprising,General,13-1161.01,Search Marketing Strategists
+19,1.B.1.e,Enterprising,General,23-1011.00,Lawyers
+20,1.B.1.e,Enterprising,General,41-2031.00,Retail Salespersons
+21,1.B.1.f,Conventional,General,13-1041.01,Environmental Compliance Inspectors
+22,1.B.1.f,Conventional,General,13-2061.00,Financial Examiners
+23,1.B.1.f,Conventional,General,15-1242.00,Database Administrators
+24,1.B.1.f,Conventional,General,43-9061.00,"Office Clerks, General"
+25,1.B.3.a,Mechanics/Electronics,Basic,17-3024.01,Robotics Technicians
+26,1.B.3.a,Mechanics/Electronics,Basic,49-2092.00,"Electric Motor, Power Tool, and Related Repairers"
+27,1.B.3.a,Mechanics/Electronics,Basic,49-2094.00,"Electrical and Electronics Repairers, Commercial and Industrial Equipment"
+28,1.B.3.a,Mechanics/Electronics,Basic,49-3011.00,Aircraft Mechanics and Service Technicians
+29,1.B.3.a,Mechanics/Electronics,Basic,49-9081.00,Wind Turbine Service Technicians
+30,1.B.3.b,Construction/Woodwork,Basic,47-2031.00,Carpenters
+31,1.B.3.b,Construction/Woodwork,Basic,51-7011.00,Cabinetmakers and Bench Carpenters
+32,1.B.3.b,Construction/Woodwork,Basic,51-7021.00,Furniture Finishers
+33,1.B.3.b,Construction/Woodwork,Basic,51-7031.00,"Model Makers, Wood"
+34,1.B.3.b,Construction/Woodwork,Basic,51-7042.00,"Woodworking Machine Setters, Operators, and Tenders, Except Sawing"
+35,1.B.3.c,Transportation/Machine Operation,Basic,53-3032.00,Heavy and Tractor-Trailer Truck Drivers
+36,1.B.3.c,Transportation/Machine Operation,Basic,53-3052.00,"Bus Drivers, Transit and Intercity"
+37,1.B.3.c,Transportation/Machine Operation,Basic,53-3054.00,Taxi Drivers
+38,1.B.3.c,Transportation/Machine Operation,Basic,53-4011.00,Locomotive Engineers
+39,1.B.3.c,Transportation/Machine Operation,Basic,53-7051.00,Industrial Truck and Tractor Operators
+40,1.B.3.d,Physical/Manual Labor,Basic,45-2041.00,"Graders and Sorters, Agricultural Products"
+41,1.B.3.d,Physical/Manual Labor,Basic,47-2061.00,Construction Laborers
+42,1.B.3.d,Physical/Manual Labor,Basic,47-5081.00,Helpers--Extraction Workers
+43,1.B.3.d,Physical/Manual Labor,Basic,53-7062.00,"Laborers and Freight, Stock, and Material Movers, Hand"
+44,1.B.3.e,Protective Service,Basic,33-3021.00,Detectives and Criminal Investigators
+45,1.B.3.e,Protective Service,Basic,33-3051.00,Police and Sheriff's Patrol Officers
+46,1.B.3.e,Protective Service,Basic,33-3051.04,Customs and Border Protection Officers
+47,1.B.3.e,Protective Service,Basic,33-9032.00,Security Guards
+48,1.B.3.f,Agriculture,Basic,11-9013.00,"Farmers, Ranchers, and Other Agricultural Managers"
+49,1.B.3.f,Agriculture,Basic,19-1031.02,Range Managers
+50,1.B.3.f,Agriculture,Basic,45-1011.00,"First-Line Supervisors of Farming, Fishing, and Forestry Workers"
+51,1.B.3.f,Agriculture,Basic,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse"
+52,1.B.3.g,Nature/Outdoors,Basic,19-1032.00,Foresters
+53,1.B.3.g,Nature/Outdoors,Basic,19-2041.02,Environmental Restoration Planners
+54,1.B.3.g,Nature/Outdoors,Basic,19-4071.00,Forest and Conservation Technicians
+55,1.B.3.g,Nature/Outdoors,Basic,37-3011.00,Landscaping and Groundskeeping Workers
+56,1.B.3.h,Animal Service,Basic,29-1131.00,Veterinarians
+57,1.B.3.h,Animal Service,Basic,33-9011.00,Animal Control Workers
+58,1.B.3.h,Animal Service,Basic,39-2011.00,Animal Trainers
+59,1.B.3.h,Animal Service,Basic,39-2021.00,Animal Caretakers
+60,1.B.3.i,Athletics,Basic,11-9179.01,Fitness and Wellness Coordinators
+61,1.B.3.i,Athletics,Basic,27-2021.00,Athletes and Sports Competitors
+62,1.B.3.i,Athletics,Basic,27-2022.00,Coaches and Scouts
+63,1.B.3.i,Athletics,Basic,27-2023.00,"Umpires, Referees, and Other Sports Officials"
+64,1.B.3.i,Athletics,Basic,29-9091.00,Athletic Trainers
+65,1.B.3.j,Engineering,Basic,17-2011.00,Aerospace Engineers
+66,1.B.3.j,Engineering,Basic,17-2051.00,Civil Engineers
+67,1.B.3.j,Engineering,Basic,17-2141.02,Automotive Engineers
+68,1.B.3.j,Engineering,Basic,17-2199.11,Solar Energy Systems Engineers
+69,1.B.3.j,Engineering,Basic,17-3023.00,Electrical and Electronic Engineering Technologists and Technicians
+70,1.B.3.j,Engineering,Basic,17-3027.00,Mechanical Engineering Technologists and Technicians
+71,1.B.3.k,Physical Science,Basic,19-1013.00,Soil and Plant Scientists
+72,1.B.3.k,Physical Science,Basic,19-2011.00,Astronomers
+73,1.B.3.k,Physical Science,Basic,19-2012.00,Physicists
+74,1.B.3.k,Physical Science,Basic,19-2021.00,Atmospheric and Space Scientists
+75,1.B.3.k,Physical Science,Basic,19-2031.00,Chemists
+76,1.B.3.l,Life Science,Basic,19-1022.00,Microbiologists
+77,1.B.3.l,Life Science,Basic,19-1023.00,Zoologists and Wildlife Biologists
+78,1.B.3.l,Life Science,Basic,19-1029.03,Geneticists
+79,1.B.3.l,Life Science,Basic,19-1029.04,Biologists
+80,1.B.3.m,Medical Science,Basic,17-2031.00,Bioengineers and Biomedical Engineers
+81,1.B.3.m,Medical Science,Basic,19-1029.02,Molecular and Cellular Biologists
+82,1.B.3.m,Medical Science,Basic,19-1041.00,Epidemiologists
+83,1.B.3.m,Medical Science,Basic,19-1042.00,"Medical Scientists, Except Epidemiologists"
+84,1.B.3.n,Social Science,Basic,19-3011.00,Economists
+85,1.B.3.n,Social Science,Basic,19-3033.00,Clinical and Counseling Psychologists
+86,1.B.3.n,Social Science,Basic,19-3041.00,Sociologists
+87,1.B.3.n,Social Science,Basic,19-3094.00,Political Scientists
+88,1.B.3.o,Humanities,Basic,19-3091.00,Anthropologists and Archeologists
+89,1.B.3.o,Humanities,Basic,19-3093.00,Historians
+90,1.B.3.o,Humanities,Basic,25-1062.00,"Area, Ethnic, and Cultural Studies Teachers, Postsecondary"
+91,1.B.3.o,Humanities,Basic,25-1123.00,"English Language and Literature Teachers, Postsecondary"
+92,1.B.3.p,Mathematics/Statistics,Basic,15-2021.00,Mathematicians
+93,1.B.3.p,Mathematics/Statistics,Basic,15-2041.00,Statisticians
+94,1.B.3.p,Mathematics/Statistics,Basic,15-2041.01,Biostatisticians
+95,1.B.3.p,Mathematics/Statistics,Basic,15-2051.00,Data Scientists
+96,1.B.3.q,Information Technology,Basic,15-1212.00,Information Security Analysts
+97,1.B.3.q,Information Technology,Basic,15-1242.00,Database Administrators
+98,1.B.3.q,Information Technology,Basic,15-1251.00,Computer Programmers
+99,1.B.3.r,Visual Arts,Basic,27-1011.00,Art Directors
+100,1.B.3.r,Visual Arts,Basic,27-1013.00,"Fine Artists, Including Painters, Sculptors, and Illustrators"
+101,1.B.3.r,Visual Arts,Basic,27-1014.00,Special Effects Artists and Animators
+102,1.B.3.r,Visual Arts,Basic,27-1024.00,Graphic Designers
+103,1.B.3.r,Visual Arts,Basic,27-4021.00,Photographers
+104,1.B.3.r,Visual Arts,Basic,27-4032.00,Film and Video Editors
+105,1.B.3.s,Applied Arts and Design,Basic,27-1012.00,Craft Artists
+106,1.B.3.s,Applied Arts and Design,Basic,27-1021.00,Commercial and Industrial Designers
+107,1.B.3.s,Applied Arts and Design,Basic,27-1025.00,Interior Designers
+108,1.B.3.s,Applied Arts and Design,Basic,27-1027.00,Set and Exhibit Designers
+109,1.B.3.t,Performing Arts,Basic,27-2011.00,Actors
+110,1.B.3.t,Performing Arts,Basic,27-2031.00,Dancers
+111,1.B.3.t,Performing Arts,Basic,27-2032.00,Choreographers
+112,1.B.3.u,Music,Basic,27-2041.00,Music Directors and Composers
+113,1.B.3.u,Music,Basic,27-2042.00,Musicians and Singers
+114,1.B.3.v,Creative Writing,Basic,15-1255.01,Video Game Designers
+115,1.B.3.v,Creative Writing,Basic,27-3041.00,Editors
+116,1.B.3.v,Creative Writing,Basic,27-3043.00,Writers and Authors
+117,1.B.3.v,Creative Writing,Basic,27-3043.05,"Poets, Lyricists and Creative Writers"
+118,1.B.3.w,Media,Basic,27-2012.00,Producers and Directors
+119,1.B.3.w,Media,Basic,27-3011.00,Broadcast Announcers and Radio Disc Jockeys
+120,1.B.3.w,Media,Basic,27-3023.00,"News Analysts, Reporters, and Journalists"
+121,1.B.3.x,Culinary Art,Basic,35-1011.00,Chefs and Head Cooks
+122,1.B.3.x,Culinary Art,Basic,35-2013.00,"Cooks, Private Household"
+123,1.B.3.x,Culinary Art,Basic,35-2014.00,"Cooks, Restaurant"
+124,1.B.3.x,Culinary Art,Basic,51-3011.00,Bakers
+125,1.B.3.y,Teaching/Education,Basic,25-2011.00,"Preschool Teachers, Except Special Education"
+126,1.B.3.y,Teaching/Education,Basic,25-2012.00,"Kindergarten Teachers, Except Special Education"
+127,1.B.3.y,Teaching/Education,Basic,25-2021.00,"Elementary School Teachers, Except Special Education"
+128,1.B.3.y,Teaching/Education,Basic,25-2022.00,"Middle School Teachers, Except Special and Career/Technical Education"
+129,1.B.3.y,Teaching/Education,Basic,25-2031.00,"Secondary School Teachers, Except Special and Career/Technical Education"
+130,1.B.3.z,Social Service,Basic,21-1013.00,Marriage and Family Therapists
+131,1.B.3.z,Social Service,Basic,21-1014.00,Mental Health Counselors
+132,1.B.3.z,Social Service,Basic,21-1021.00,"Child, Family, and School Social Workers"
+133,1.B.3.z,Social Service,Basic,21-1094.00,Community Health Workers
+134,1.B.3.z,Social Service,Basic,31-1122.00,Personal Care Aides
+135,1.B.3.aa,Health Care Service,Basic,29-1021.00,"Dentists, General"
+136,1.B.3.aa,Health Care Service,Basic,29-1141.00,Registered Nurses
+137,1.B.3.aa,Health Care Service,Basic,29-1215.00,Family Medicine Physicians
+138,1.B.3.aa,Health Care Service,Basic,29-2043.00,Paramedics
+139,1.B.3.aa,Health Care Service,Basic,31-9092.00,Medical Assistants
+140,1.B.3.ab,Religious Activities,Basic,21-2011.00,Clergy
+141,1.B.3.ab,Religious Activities,Basic,21-2021.00,"Directors, Religious Activities and Education"
+142,1.B.3.ab,Religious Activities,Basic,25-1126.00,"Philosophy and Religion Teachers, Postsecondary"
+143,1.B.3.ac,Personal Service,Basic,39-6012.00,Concierges
+144,1.B.3.ac,Personal Service,Basic,39-7011.00,Tour Guides and Escorts
+145,1.B.3.ac,Personal Service,Basic,41-3041.00,Travel Agents
+146,1.B.3.ad,Professional Advising,Basic,13-1011.00,"Agents and Business Managers of Artists, Performers, and Athletes"
+147,1.B.3.ad,Professional Advising,Basic,13-1151.00,Training and Development Specialists
+148,1.B.3.ad,Professional Advising,Basic,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors"
+149,1.B.3.ae,Business Initiatives,Basic,11-1011.00,Chief Executives
+150,1.B.3.ae,Business Initiatives,Basic,13-1022.00,"Wholesale and Retail Buyers, Except Farm Products"
+151,1.B.3.ae,Business Initiatives,Basic,13-1161.01,Search Marketing Strategists
+152,1.B.3.af,Sales,Basic,41-2031.00,Retail Salespersons
+153,1.B.3.af,Sales,Basic,41-3031.00,"Securities, Commodities, and Financial Services Sales Agents"
+154,1.B.3.af,Sales,Basic,41-4012.00,"Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products"
+155,1.B.3.af,Sales,Basic,41-9091.00,"Door-to-Door Sales Workers, News and Street Vendors, and Related Workers"
+156,1.B.3.ag,Marketing/Advertising,Basic,11-2011.00,Advertising and Promotions Managers
+157,1.B.3.ag,Marketing/Advertising,Basic,11-2021.00,Marketing Managers
+158,1.B.3.ag,Marketing/Advertising,Basic,13-1161.00,Market Research Analysts and Marketing Specialists
+159,1.B.3.ag,Marketing/Advertising,Basic,27-3031.00,Public Relations Specialists
+160,1.B.3.ah,Finance,Basic,11-3031.00,Financial Managers
+161,1.B.3.ah,Finance,Basic,11-3031.01,Treasurers and Controllers
+162,1.B.3.ah,Finance,Basic,13-2051.00,Financial and Investment Analysts
+163,1.B.3.ah,Finance,Basic,13-2052.00,Personal Financial Advisors
+164,1.B.3.ah,Finance,Basic,13-2061.00,Financial Examiners
+165,1.B.3.ai,Accounting,Basic,13-2011.00,Accountants and Auditors
+166,1.B.3.ai,Accounting,Basic,43-3021.00,Billing and Posting Clerks
+167,1.B.3.ai,Accounting,Basic,43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks"
+168,1.B.3.ai,Accounting,Basic,43-3051.00,Payroll and Timekeeping Clerks
+169,1.B.3.aj,Human Resources,Basic,11-3121.00,Human Resources Managers
+170,1.B.3.aj,Human Resources,Basic,13-1071.00,Human Resources Specialists
+171,1.B.3.aj,Human Resources,Basic,13-1141.00,"Compensation, Benefits, and Job Analysis Specialists"
+172,1.B.3.aj,Human Resources,Basic,43-4161.00,"Human Resources Assistants, Except Payroll and Timekeeping"
+173,1.B.3.ak,Office Work,Basic,43-4071.00,File Clerks
+174,1.B.3.ak,Office Work,Basic,43-5051.00,Postal Service Clerks
+175,1.B.3.ak,Office Work,Basic,43-6014.00,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive"
+176,1.B.3.ak,Office Work,Basic,43-9061.00,"Office Clerks, General"
+177,1.B.3.al,Management/Administration,Basic,11-1021.00,General and Operations Managers
+178,1.B.3.al,Management/Administration,Basic,11-3012.00,Administrative Services Managers
+179,1.B.3.al,Management/Administration,Basic,11-9111.00,Medical and Health Services Managers
+180,1.B.3.am,Public Speaking,Basic,13-1131.00,Fundraisers
+181,1.B.3.am,Public Speaking,Basic,25-1122.00,"Communications Teachers, Postsecondary"
+182,1.B.3.an,Politics,Basic,11-1031.00,Legislators
+183,1.B.3.ao,Law,Basic,23-1011.00,Lawyers
+184,1.B.3.ao,Law,Basic,23-1021.00,"Administrative Law Judges, Adjudicators, and Hearing Officers"
+185,1.B.3.ao,Law,Basic,23-1023.00,"Judges, Magistrate Judges, and Magistrates"
+186,1.B.3.ao,Law,Basic,23-2011.00,Paralegals and Legal Assistants

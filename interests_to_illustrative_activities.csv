@@ -1,0 +1,189 @@
+﻿PK,Interests Element ID,Interests Element Name,Interest Type,Activity
+1,1.B.1.a,Realistic,General,Build kitchen cabinets.
+2,1.B.1.a,Realistic,General,Drive a truck to deliver packages to offices and homes.
+3,1.B.1.a,Realistic,General,Put out forest fires.
+4,1.B.1.a,Realistic,General,Repair household appliances.
+5,1.B.1.b,Investigative,General,Develop a new medicine.
+6,1.B.1.b,Investigative,General,Develop a way to better predict the weather.
+7,1.B.1.b,Investigative,General,Study ways to reduce water pollution.
+8,1.B.1.b,Investigative,General,Work in a biology lab.
+9,1.B.1.c,Artistic,General,Compose or arrange music.
+10,1.B.1.c,Artistic,General,Create special effects for movies.
+11,1.B.1.c,Artistic,General,Draw pictures.
+12,1.B.1.c,Artistic,General,Write books or plays.
+13,1.B.1.d,Social,General,Give career guidance to people.
+14,1.B.1.d,Social,General,Help people with personal or emotional problems.
+15,1.B.1.d,Social,General,Perform rehabilitation therapy.
+16,1.B.1.d,Social,General,Teach a high school class.
+17,1.B.1.e,Enterprising,General,Manage a department within a large company.
+18,1.B.1.e,Enterprising,General,Market a new line of clothing.
+19,1.B.1.e,Enterprising,General,Represent a client in a lawsuit.
+20,1.B.1.e,Enterprising,General,Start your own business.
+21,1.B.1.f,Conventional,General,Develop a spreadsheet using computer software.
+22,1.B.1.f,Conventional,General,Inventory supplies using a handheld computer.
+23,1.B.1.f,Conventional,General,Keep shipping and receiving records.
+24,1.B.1.f,Conventional,General,Load computer software into a large computer network.
+25,1.B.3.a,Mechanics/Electronics,Basic,Install computer systems.
+26,1.B.3.a,Mechanics/Electronics,Basic,Maintain aircraft engines.
+27,1.B.3.a,Mechanics/Electronics,Basic,Make repairs to industrial robots.
+28,1.B.3.a,Mechanics/Electronics,Basic,Repair motors and generators.
+29,1.B.3.b,Construction/Woodwork,Basic,Build and finish furniture.
+30,1.B.3.b,Construction/Woodwork,Basic,Build and install cabinets.
+31,1.B.3.b,Construction/Woodwork,Basic,Construct wood stairways.
+32,1.B.3.b,Construction/Woodwork,Basic,Operate woodworking machines.
+33,1.B.3.c,Transportation/Machine Operation,Basic,Drive a bus or motor coach.
+34,1.B.3.c,Transportation/Machine Operation,Basic,Operate a bulldozer to move dirt.
+35,1.B.3.c,Transportation/Machine Operation,Basic,Operate a forklift to move boxes.
+36,1.B.3.c,Transportation/Machine Operation,Basic,Transport materials in a truck or van.
+37,1.B.3.d,Physical/Manual Labor,Basic,Clean a work area.
+38,1.B.3.d,Physical/Manual Labor,Basic,Manually move cargo and freight.
+39,1.B.3.d,Physical/Manual Labor,Basic,Perform physical labor at a construction site.
+40,1.B.3.d,Physical/Manual Labor,Basic,"Unload, sort, and move materials, equipment, or supplies."
+41,1.B.3.e,Protective Service,Basic,Apprehend and arrest suspects.
+42,1.B.3.e,Protective Service,Basic,Guard inmates in a prison.
+43,1.B.3.e,Protective Service,Basic,Investigate criminal activity.
+44,1.B.3.e,Protective Service,Basic,Maintain order and protect life by enforcing laws.
+45,1.B.3.f,Agriculture,Basic,Develop plans to reduce soil erosion and protect rangelands.
+46,1.B.3.f,Agriculture,Basic,Inspect crops for disease.
+47,1.B.3.f,Agriculture,Basic,"Plant, cultivate, and harvest crops."
+48,1.B.3.f,Agriculture,Basic,Raise and tend to farm animals.
+49,1.B.3.g,Nature/Outdoors,Basic,Conserve wildlife habitats.
+50,1.B.3.g,Nature/Outdoors,Basic,Manage public forested lands for recreational purposes.
+51,1.B.3.g,Nature/Outdoors,Basic,Plant a public garden.
+52,1.B.3.g,Nature/Outdoors,Basic,Train conservation workers in planting tree seedlings.
+53,1.B.3.h,Animal Service,Basic,Exercise animals in a shelter.
+54,1.B.3.h,Animal Service,Basic,Provide treatment to sick or injured animals.
+55,1.B.3.h,Animal Service,Basic,"Supply animals with food, water, and personal care."
+56,1.B.3.h,Animal Service,Basic,Train animals to assist persons with disabilities.
+57,1.B.3.i,Athletics,Basic,Coach a sports team.
+58,1.B.3.i,Athletics,Basic,Compete in an athletic event.
+59,1.B.3.i,Athletics,Basic,Play sports.
+60,1.B.3.i,Athletics,Basic,Train for an athletic event.
+61,1.B.3.j,Engineering,Basic,Apply principles of engineering in designing buildings.
+62,1.B.3.j,Engineering,Basic,"Design, construct, and test aircraft, missiles, and spacecraft."
+63,1.B.3.j,Engineering,Basic,Explain engineering drawings.
+64,1.B.3.j,Engineering,Basic,Test performance of electronic and mechanical systems.
+65,1.B.3.k,Physical Science,Basic,Investigate the chemical composition of an unknown substance.
+66,1.B.3.k,Physical Science,Basic,Study formation of stars using space-based telescopes.
+67,1.B.3.k,Physical Science,Basic,Study ways to make foods safe and healthy.
+68,1.B.3.k,Physical Science,Basic,Use computer models for weather forecasting.
+69,1.B.3.l,Life Science,Basic,Develop medically useful products for humans.
+70,1.B.3.l,Life Science,Basic,Investigate the effects of bacteria on humans and animals.
+71,1.B.3.l,Life Science,Basic,Prepare environmental impact reports on wildlife.
+72,1.B.3.l,Life Science,Basic,Study the science of genes.
+73,1.B.3.m,Medical Science,Basic,Conduct research on ways to treat a new type of illness.
+74,1.B.3.m,Medical Science,Basic,Evaluate the performance of a newly developed medicine.
+75,1.B.3.m,Medical Science,Basic,Investigate the causes of human disease.
+76,1.B.3.m,Medical Science,Basic,Study ways of preventing disease.
+77,1.B.3.n,Social Science,Basic,Conduct research on economic issues.
+78,1.B.3.n,Social Science,Basic,Study cultural differences.
+79,1.B.3.n,Social Science,Basic,Study mental and emotional disorders.
+80,1.B.3.n,Social Science,Basic,Study public opinion on political issues.
+81,1.B.3.o,Humanities,Basic,Research and compare religious beliefs.
+82,1.B.3.o,Humanities,Basic,Research influences on a literary work.
+83,1.B.3.o,Humanities,Basic,Study the culture and history of a region of the world.
+84,1.B.3.o,Humanities,Basic,Study the history of the family.
+85,1.B.3.p,Mathematics/Statistics,Basic,Develop a statistical model to explain human behavior.
+86,1.B.3.p,Mathematics/Statistics,Basic,Extend mathematical knowledge in the field of geometry.
+87,1.B.3.p,Mathematics/Statistics,Basic,Make predictions based on statistical analyses.
+88,1.B.3.p,Mathematics/Statistics,Basic,Solve mathematical problems.
+89,1.B.3.q,Information Technology,Basic,Diagnose and resolve computer software problems.
+90,1.B.3.q,Information Technology,Basic,Research security measures for computer systems.
+91,1.B.3.q,Information Technology,Basic,"Test, maintain, and monitor computer programs and systems."
+92,1.B.3.q,Information Technology,Basic,Write and review code for software.
+93,1.B.3.r,Visual Arts,Basic,Create a sculpture.
+94,1.B.3.r,Visual Arts,Basic,Create computer-generated graphics or animation.
+95,1.B.3.r,Visual Arts,Basic,Create photography art prints.
+96,1.B.3.r,Visual Arts,Basic,Sketch a picture or design.
+97,1.B.3.s,Applied Arts and Design,Basic,Create appealing product designs for home appliances.
+98,1.B.3.s,Applied Arts and Design,Basic,Create the set for film or theater productions.
+99,1.B.3.s,Applied Arts and Design,Basic,Design and create handmade clothes.
+100,1.B.3.s,Applied Arts and Design,Basic,Design displays to sell products in stores.
+101,1.B.3.t,Performing Arts,Basic,Act on stage for an audience.
+102,1.B.3.t,Performing Arts,Basic,Create new dance routines.
+103,1.B.3.t,Performing Arts,Basic,"Direct stage, television, radio, video, or film productions."
+104,1.B.3.t,Performing Arts,Basic,Study and rehearse roles from scripts.
+105,1.B.3.u,Music,Basic,"Create musical compositions, arrangements, or scores."
+106,1.B.3.u,Music,Basic,Perform music for a live audience.
+107,1.B.3.u,Music,Basic,Play a musical instrument.
+108,1.B.3.u,Music,Basic,Sing in a band.
+109,1.B.3.v,Creative Writing,Basic,Write a novel.
+110,1.B.3.v,Creative Writing,Basic,Write advertisements.
+111,1.B.3.v,Creative Writing,Basic,Write poetry or lyrics.
+112,1.B.3.v,Creative Writing,Basic,Write scripts for movies and media.
+113,1.B.3.w,Media,Basic,Develop content for a podcast.
+114,1.B.3.w,Media,Basic,Direct a television series.
+115,1.B.3.w,Media,Basic,Speak or read from scripted materials on radio or television.
+116,1.B.3.w,Media,Basic,Write and report human interest stories.
+117,1.B.3.x,Culinary Art,Basic,Coordinate activities of cooks engaged in food preparation.
+118,1.B.3.x,Culinary Art,Basic,Create new recipes or food presentations.
+119,1.B.3.x,Culinary Art,Basic,Develop a distinctive style of cooking.
+120,1.B.3.x,Culinary Art,Basic,Select and ensure freshness of food and ingredients for preparation.
+121,1.B.3.y,Teaching/Education,Basic,Adapt teaching methods to meet students' interests.
+122,1.B.3.y,Teaching/Education,Basic,Instruct students in activities designed to further intellectual growth.
+123,1.B.3.y,Teaching/Education,Basic,Teach school subjects.
+124,1.B.3.y,Teaching/Education,Basic,Teach social skills to students.
+125,1.B.3.z,Social Service,Basic,Advocate for individual or community needs.
+126,1.B.3.z,Social Service,Basic,Assist people with special needs.
+127,1.B.3.z,Social Service,Basic,Counsel clients with mental health issues.
+128,1.B.3.z,Social Service,Basic,Provide personal and economic assistance for homeless individuals.
+129,1.B.3.aa,Health Care Service,Basic,Administer first aid treatment or life support to injured persons.
+130,1.B.3.aa,Health Care Service,Basic,Develop medical treatment plans for patients.
+131,1.B.3.aa,Health Care Service,Basic,Prescribe medications.
+132,1.B.3.aa,Health Care Service,Basic,Provide preventive care to individuals.
+133,1.B.3.ab,Religious Activities,Basic,Lead a religious group.
+134,1.B.3.ab,Religious Activities,Basic,Organize religious services.
+135,1.B.3.ab,Religious Activities,Basic,Plan religious education programs.
+136,1.B.3.ab,Religious Activities,Basic,Provide spiritual guidance.
+137,1.B.3.ac,Personal Service,Basic,Assist customers with problems or questions.
+138,1.B.3.ac,Personal Service,Basic,Help individuals plan special events.
+139,1.B.3.ac,Personal Service,Basic,"Make reservations for guests, such as for dinner, spa treatments, or golf tee times."
+140,1.B.3.ac,Personal Service,Basic,Make travel arrangements for sightseeing or other tours.
+141,1.B.3.ad,Professional Advising,Basic,Advise people on how to have a successful career.
+142,1.B.3.ad,Professional Advising,Basic,Coach students on study skills.
+143,1.B.3.ad,Professional Advising,Basic,Counsel people how to achieve their professional goals.
+144,1.B.3.ad,Professional Advising,Basic,Teach employees leadership and soft skills.
+145,1.B.3.ae,Business Initiatives,Basic,Create business strategies or policies to increase productivity.
+146,1.B.3.ae,Business Initiatives,Basic,Develop a long-term strategic plan for a company.
+147,1.B.3.ae,Business Initiatives,Basic,Identify partner companies to pursue new business opportunities.
+148,1.B.3.ae,Business Initiatives,Basic,Plan activities of businesses to maximize returns on investments.
+149,1.B.3.af,Sales,Basic,Demonstrate products to consumers.
+150,1.B.3.af,Sales,Basic,Direct sales or customer service activities.
+151,1.B.3.af,Sales,Basic,Persuade customers to buy a new product.
+152,1.B.3.af,Sales,Basic,Sell goods at bargain prices.
+153,1.B.3.ag,Marketing/Advertising,Basic,Develop promotional materials for advertising.
+154,1.B.3.ag,Marketing/Advertising,Basic,Plan an advertising or marketing campaign.
+155,1.B.3.ag,Marketing/Advertising,Basic,Promote a new product by advertising.
+156,1.B.3.ag,Marketing/Advertising,Basic,Use social media to market a company.
+157,1.B.3.ah,Finance,Basic,Analyze financials and securities of a company.
+158,1.B.3.ah,Finance,Basic,Make investments to generate future income.
+159,1.B.3.ah,Finance,Basic,Manage large amounts of money for a business.
+160,1.B.3.ah,Finance,Basic,Plan and direct financial decisions for a business.
+161,1.B.3.ai,Accounting,Basic,Keep accounting records for a company.
+162,1.B.3.ai,Accounting,Basic,Prepare budgets for a business.
+163,1.B.3.ai,Accounting,Basic,Prepare employee payroll.
+164,1.B.3.ai,Accounting,Basic,Verify and record numerical data for financial records.
+165,1.B.3.aj,Human Resources,Basic,Conduct training to improve employee skills and organizational performance.
+166,1.B.3.aj,Human Resources,Basic,Interpret and explain company policies and benefits to employees.
+167,1.B.3.aj,Human Resources,Basic,Maintain employee personnel records.
+168,1.B.3.aj,Human Resources,Basic,Recruit and hire employees for a company.
+169,1.B.3.ak,Office Work,Basic,"Answer telephones, direct calls, and take messages."
+170,1.B.3.ak,Office Work,Basic,"Maintain and update filing, inventory, and database systems."
+171,1.B.3.ak,Office Work,Basic,"Operate office machines, such as printers and scanners."
+172,1.B.3.ak,Office Work,Basic,Schedule appointments for customers.
+173,1.B.3.al,Management/Administration,Basic,Develop organizational goals or objectives.
+174,1.B.3.al,Management/Administration,Basic,Manage an organization or group of people.
+175,1.B.3.al,Management/Administration,Basic,Plan or coordinate one or more administrative services.
+176,1.B.3.al,Management/Administration,Basic,Supervise organizational operations or projects.
+177,1.B.3.am,Public Speaking,Basic,Be a speaker at a club meeting.
+178,1.B.3.am,Public Speaking,Basic,Discuss your ideas on a podcast.
+179,1.B.3.am,Public Speaking,Basic,Make a public speech to raise money for a worthy cause.
+180,1.B.3.am,Public Speaking,Basic,Provide a public announcement on TV or radio.
+181,1.B.3.an,Politics,Basic,Campaign for political office.
+182,1.B.3.an,Politics,Basic,Develop knowledge of government policy decisions.
+183,1.B.3.an,Politics,Basic,Engage in a political debate.
+184,1.B.3.an,Politics,Basic,Lead a political campaign.
+185,1.B.3.ao,Law,Basic,Defend a client in court.
+186,1.B.3.ao,Law,Basic,Draw up legal documents.
+187,1.B.3.ao,Law,Basic,Mediate legal disputes.
+188,1.B.3.ao,Law,Basic,Provide legal advice to clients.

@@ -1,0 +1,54 @@
+﻿PK,Basic Interests Element ID,Basic Interests Element Name,RIASEC Element ID,RIASEC Element Name
+1,1.B.3.a,Mechanics/Electronics,1.B.1.a,Realistic
+2,1.B.3.b,Construction/Woodwork,1.B.1.a,Realistic
+3,1.B.3.c,Transportation/Machine Operation,1.B.1.a,Realistic
+4,1.B.3.d,Physical/Manual Labor,1.B.1.a,Realistic
+5,1.B.3.e,Protective Service,1.B.1.a,Realistic
+6,1.B.3.f,Agriculture,1.B.1.a,Realistic
+7,1.B.3.g,Nature/Outdoors,1.B.1.a,Realistic
+8,1.B.3.h,Animal Service,1.B.1.a,Realistic
+9,1.B.3.h,Animal Service,1.B.1.d,Social
+10,1.B.3.i,Athletics,1.B.1.a,Realistic
+11,1.B.3.i,Athletics,1.B.1.e,Enterprising
+12,1.B.3.j,Engineering,1.B.1.a,Realistic
+13,1.B.3.k,Physical Science,1.B.1.b,Investigative
+14,1.B.3.l,Life Science,1.B.1.b,Investigative
+15,1.B.3.m,Medical Science,1.B.1.b,Investigative
+16,1.B.3.n,Social Science,1.B.1.b,Investigative
+17,1.B.3.n,Social Science,1.B.1.d,Social
+18,1.B.3.o,Humanities,1.B.1.b,Investigative
+19,1.B.3.o,Humanities,1.B.1.c,Artistic
+20,1.B.3.p,Mathematics/Statistics,1.B.1.b,Investigative
+21,1.B.3.p,Mathematics/Statistics,1.B.1.f,Conventional
+22,1.B.3.q,Information Technology,1.B.1.f,Conventional
+23,1.B.3.r,Visual Arts,1.B.1.c,Artistic
+24,1.B.3.s,Applied Arts and Design,1.B.1.c,Artistic
+25,1.B.3.t,Performing Arts,1.B.1.c,Artistic
+26,1.B.3.u,Music,1.B.1.c,Artistic
+27,1.B.3.v,Creative Writing,1.B.1.c,Artistic
+28,1.B.3.w,Media,1.B.1.c,Artistic
+29,1.B.3.x,Culinary Art,1.B.1.c,Artistic
+30,1.B.3.x,Culinary Art,1.B.1.d,Social
+31,1.B.3.y,Teaching/Education,1.B.1.d,Social
+32,1.B.3.z,Social Service,1.B.1.d,Social
+33,1.B.3.aa,Health Care Service,1.B.1.b,Investigative
+34,1.B.3.aa,Health Care Service,1.B.1.d,Social
+35,1.B.3.ab,Religious Activities,1.B.1.d,Social
+36,1.B.3.ab,Religious Activities,1.B.1.e,Enterprising
+37,1.B.3.ac,Personal Service,1.B.1.d,Social
+38,1.B.3.ad,Professional Advising,1.B.1.d,Social
+39,1.B.3.ad,Professional Advising,1.B.1.e,Enterprising
+40,1.B.3.ae,Business Initiatives,1.B.1.e,Enterprising
+41,1.B.3.af,Sales,1.B.1.e,Enterprising
+42,1.B.3.ag,Marketing/Advertising,1.B.1.c,Artistic
+43,1.B.3.ag,Marketing/Advertising,1.B.1.e,Enterprising
+44,1.B.3.ah,Finance,1.B.1.e,Enterprising
+45,1.B.3.ah,Finance,1.B.1.f,Conventional
+46,1.B.3.ai,Accounting,1.B.1.f,Conventional
+47,1.B.3.aj,Human Resources,1.B.1.d,Social
+48,1.B.3.aj,Human Resources,1.B.1.f,Conventional
+49,1.B.3.ak,Office Work,1.B.1.f,Conventional
+50,1.B.3.al,Management/Administration,1.B.1.e,Enterprising
+51,1.B.3.am,Public Speaking,1.B.1.e,Enterprising
+52,1.B.3.an,Politics,1.B.1.e,Enterprising
+53,1.B.3.ao,Law,1.B.1.e,Enterprising
