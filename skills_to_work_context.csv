@@ -1,0 +1,97 @@
+﻿PK,Skills Element ID,Skills Element Name,Work Context Element ID,Work Context Element Name
+1,2.A.1.a,Reading Comprehension,4.C.1.a.2.h,E-Mail
+2,2.A.1.b,Active Listening,4.C.1.a.2.c,Public Speaking
+3,2.A.1.b,Active Listening,4.C.1.a.2.f,Telephone Conversations
+4,2.A.1.b,Active Listening,4.C.1.a.2.l,Face-to-Face Discussions with Individuals and Within Teams
+5,2.A.1.b,Active Listening,4.C.1.a.4,Contact With Others
+6,2.A.1.b,Active Listening,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+7,2.A.1.b,Active Listening,4.C.1.b.1.f,Deal With External Customers or the Public in General
+8,2.A.1.b,Active Listening,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+9,2.A.1.b,Active Listening,4.C.1.d.1,Conflict Situations
+10,2.A.1.b,Active Listening,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+11,2.A.1.c,Writing,4.C.1.a.2.h,E-Mail
+12,2.A.1.c,Writing,4.C.1.a.2.j,Written Letters and Memos
+13,2.A.1.d,Speaking,4.C.1.a.2.c,Public Speaking
+14,2.A.1.d,Speaking,4.C.1.a.2.f,Telephone Conversations
+15,2.A.1.d,Speaking,4.C.1.a.2.l,Face-to-Face Discussions with Individuals and Within Teams
+16,2.A.1.d,Speaking,4.C.1.a.4,Contact With Others
+17,2.A.1.d,Speaking,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+18,2.A.1.d,Speaking,4.C.1.b.1.f,Deal With External Customers or the Public in General
+19,2.A.1.d,Speaking,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+20,2.A.1.d,Speaking,4.C.1.d.1,Conflict Situations
+21,2.A.1.d,Speaking,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+22,2.A.1.d,Speaking,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+23,2.A.2.a,Critical Thinking,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+24,2.A.2.a,Critical Thinking,4.C.1.b.1.f,Deal With External Customers or the Public in General
+25,2.A.2.a,Critical Thinking,4.C.1.d.1,Conflict Situations
+26,2.A.2.a,Critical Thinking,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+27,2.A.2.a,Critical Thinking,4.C.3.a.1,Consequence of Error
+28,2.A.2.a,Critical Thinking,4.C.3.a.2.a,Impact of Decisions on Co-workers or Company Results
+29,2.A.2.a,Critical Thinking,4.C.3.a.4,Freedom to Make Decisions
+30,2.A.2.a,Critical Thinking,4.C.3.b.8,"Determine Tasks, Priorities and Goals"
+31,2.A.2.a,Critical Thinking,4.C.3.c.1,Level of Competition
+32,2.A.2.b,Active Learning,4.C.3.a.4,Freedom to Make Decisions
+33,2.A.2.d,Monitoring,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+34,2.A.2.d,Monitoring,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+35,2.A.2.d,Monitoring,4.C.1.c.1,Health and Safety of Other Workers
+36,2.A.2.d,Monitoring,4.C.1.c.2,Work Outcomes and Results of Other Workers
+37,2.A.2.d,Monitoring,4.C.3.b.4,Importance of Being Exact or Accurate
+38,2.A.2.d,Monitoring,4.C.3.b.7,Importance of Repeating Same Tasks
+39,2.A.2.d,Monitoring,4.C.3.d.3,Pace Determined by Speed of Equipment
+40,2.B.1.a,Social Perceptiveness,4.C.1.a.2.c,Public Speaking
+41,2.B.1.a,Social Perceptiveness,4.C.1.a.2.f,Telephone Conversations
+42,2.B.1.a,Social Perceptiveness,4.C.1.a.2.l,Face-to-Face Discussions with Individuals and Within Teams
+43,2.B.1.a,Social Perceptiveness,4.C.1.a.4,Contact With Others
+44,2.B.1.a,Social Perceptiveness,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+45,2.B.1.a,Social Perceptiveness,4.C.1.b.1.f,Deal With External Customers or the Public in General
+46,2.B.1.a,Social Perceptiveness,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+47,2.B.1.a,Social Perceptiveness,4.C.1.d.1,Conflict Situations
+48,2.B.1.a,Social Perceptiveness,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+49,2.B.1.a,Social Perceptiveness,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+50,2.B.1.a,Social Perceptiveness,4.C.2.a.3,Physical Proximity
+51,2.B.1.a,Social Perceptiveness,4.C.3.c.1,Level of Competition
+52,2.B.1.b,Coordination,4.C.1.a.2.l,Face-to-Face Discussions with Individuals and Within Teams
+53,2.B.1.b,Coordination,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+54,2.B.1.b,Coordination,4.C.1.b.1.f,Deal With External Customers or the Public in General
+55,2.B.1.b,Coordination,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+56,2.B.1.b,Coordination,4.C.1.c.2,Work Outcomes and Results of Other Workers
+57,2.B.1.b,Coordination,4.C.1.d.1,Conflict Situations
+58,2.B.1.b,Coordination,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+59,2.B.1.b,Coordination,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+60,2.B.1.b,Coordination,4.C.3.c.1,Level of Competition
+61,2.B.1.c,Persuasion,4.C.1.a.2.l,Face-to-Face Discussions with Individuals and Within Teams
+62,2.B.1.c,Persuasion,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+63,2.B.1.c,Persuasion,4.C.1.b.1.f,Deal With External Customers or the Public in General
+64,2.B.1.c,Persuasion,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+65,2.B.1.c,Persuasion,4.C.1.d.1,Conflict Situations
+66,2.B.1.c,Persuasion,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+67,2.B.1.c,Persuasion,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+68,2.B.1.c,Persuasion,4.C.3.c.1,Level of Competition
+69,2.B.1.d,Negotiation,4.C.1.b.1.e,Work With or Contribute to a Work Group or Team
+70,2.B.1.d,Negotiation,4.C.1.b.1.f,Deal With External Customers or the Public in General
+71,2.B.1.d,Negotiation,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+72,2.B.1.d,Negotiation,4.C.1.d.1,Conflict Situations
+73,2.B.1.d,Negotiation,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+74,2.B.1.d,Negotiation,4.C.1.d.3,Dealing with Violent or Physically Aggressive People
+75,2.B.1.d,Negotiation,4.C.3.c.1,Level of Competition
+76,2.B.1.e,Instructing,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+77,2.B.1.e,Instructing,4.C.1.c.2,Work Outcomes and Results of Other Workers
+78,2.B.1.f,Service Orientation,4.C.1.b.1.f,Deal With External Customers or the Public in General
+79,2.B.1.f,Service Orientation,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+80,2.B.1.f,Service Orientation,4.C.1.d.2,"Dealing With Unpleasant, Angry, or Discourteous People"
+81,2.B.2.i,Complex Problem Solving,4.C.3.a.1,Consequence of Error
+82,2.B.2.i,Complex Problem Solving,4.C.3.a.2.a,Impact of Decisions on Co-workers or Company Results
+83,2.B.2.i,Complex Problem Solving,4.C.3.a.4,Freedom to Make Decisions
+84,2.B.3.g,Operations Monitoring,4.C.2.a.1.e,In an Open Vehicle or Operating Equipment
+85,2.B.3.g,Operations Monitoring,4.C.2.a.1.f,In an Enclosed Vehicle or Operate Enclosed Equipment
+86,2.B.3.h,Operation and Control,4.C.2.a.1.e,In an Open Vehicle or Operating Equipment
+87,2.B.3.h,Operation and Control,4.C.2.a.1.f,In an Enclosed Vehicle or Operate Enclosed Equipment
+88,2.B.4.e,Judgment and Decision Making,4.C.3.a.1,Consequence of Error
+89,2.B.4.e,Judgment and Decision Making,4.C.3.a.2.a,Impact of Decisions on Co-workers or Company Results
+90,2.B.4.e,Judgment and Decision Making,4.C.3.a.4,Freedom to Make Decisions
+91,2.B.5.a,Time Management,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+92,2.B.5.a,Time Management,4.C.1.c.2,Work Outcomes and Results of Other Workers
+93,2.B.5.a,Time Management,4.C.3.b.8,"Determine Tasks, Priorities and Goals"
+94,2.B.5.a,Time Management,4.C.3.d.1,Time Pressure
+95,2.B.5.d,Management of Personnel Resources,4.C.1.b.1.g,Coordinate or Lead Others in Accomplishing Work Activities
+96,2.B.5.d,Management of Personnel Resources,4.C.1.c.2,Work Outcomes and Results of Other Workers

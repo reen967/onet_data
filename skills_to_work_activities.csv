@@ -1,0 +1,233 @@
+﻿PK,Skills Element ID,Skills Element Name,Work Activities Element ID,Work Activities Element Name
+1,2.A.1.a,Reading Comprehension,4.A.1.a.1,Getting Information
+2,2.A.1.a,Reading Comprehension,4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings"
+3,2.A.1.a,Reading Comprehension,4.A.1.b.1,"Identifying Objects, Actions, and Events"
+4,2.A.1.a,Reading Comprehension,4.A.2.a.1,"Judging the Qualities of Objects, Services, or People"
+5,2.A.1.a,Reading Comprehension,4.A.2.a.2,Processing Information
+6,2.A.1.a,Reading Comprehension,4.A.2.a.3,Evaluating Information to Determine Compliance with Standards
+7,2.A.1.a,Reading Comprehension,4.A.2.a.4,Analyzing Data or Information
+8,2.A.1.a,Reading Comprehension,4.A.2.b.1,Making Decisions and Solving Problems
+9,2.A.1.a,Reading Comprehension,4.A.2.b.3,Updating and Using Relevant Knowledge
+10,2.A.1.a,Reading Comprehension,4.A.3.b.1,Working with Computers
+11,2.A.1.a,Reading Comprehension,4.A.3.b.2,"Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment"
+12,2.A.1.a,Reading Comprehension,4.A.4.a.1,Interpreting the Meaning of Information for Others
+13,2.A.1.a,Reading Comprehension,4.A.4.b.3,Training and Teaching Others
+14,2.A.1.a,Reading Comprehension,4.A.4.b.6,Providing Consultation and Advice to Others
+15,2.A.1.a,Reading Comprehension,4.A.4.c.1,Performing Administrative Activities
+16,2.A.1.b,Active Listening,4.A.1.a.1,Getting Information
+17,2.A.1.b,Active Listening,4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings"
+18,2.A.1.b,Active Listening,4.A.1.b.1,"Identifying Objects, Actions, and Events"
+19,2.A.1.b,Active Listening,4.A.2.b.1,Making Decisions and Solving Problems
+20,2.A.1.b,Active Listening,4.A.2.b.3,Updating and Using Relevant Knowledge
+21,2.A.1.b,Active Listening,4.A.4.a.1,Interpreting the Meaning of Information for Others
+22,2.A.1.b,Active Listening,4.A.4.a.2,"Communicating with Supervisors, Peers, or Subordinates"
+23,2.A.1.b,Active Listening,4.A.4.a.3,Communicating with People Outside the Organization
+24,2.A.1.b,Active Listening,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+25,2.A.1.b,Active Listening,4.A.4.a.5,Assisting and Caring for Others
+26,2.A.1.b,Active Listening,4.A.4.a.6,Selling or Influencing Others
+27,2.A.1.b,Active Listening,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+28,2.A.1.b,Active Listening,4.A.4.a.8,Performing for or Working Directly with the Public
+29,2.A.1.b,Active Listening,4.A.4.b.1,Coordinating the Work and Activities of Others
+30,2.A.1.b,Active Listening,4.A.4.b.2,Developing and Building Teams
+31,2.A.1.b,Active Listening,4.A.4.b.3,Training and Teaching Others
+32,2.A.1.b,Active Listening,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+33,2.A.1.b,Active Listening,4.A.4.b.5,Coaching and Developing Others
+34,2.A.1.b,Active Listening,4.A.4.b.6,Providing Consultation and Advice to Others
+35,2.A.1.b,Active Listening,4.A.4.c.2,Staffing Organizational Units
+36,2.A.1.c,Writing,4.A.2.b.4,Developing Objectives and Strategies
+37,2.A.1.c,Writing,4.A.3.b.2,"Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment"
+38,2.A.1.c,Writing,4.A.3.b.6,Documenting/Recording Information
+39,2.A.1.c,Writing,4.A.4.a.1,Interpreting the Meaning of Information for Others
+40,2.A.1.c,Writing,4.A.4.a.2,"Communicating with Supervisors, Peers, or Subordinates"
+41,2.A.1.c,Writing,4.A.4.a.3,Communicating with People Outside the Organization
+42,2.A.1.c,Writing,4.A.4.b.3,Training and Teaching Others
+43,2.A.1.c,Writing,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+44,2.A.1.c,Writing,4.A.4.b.6,Providing Consultation and Advice to Others
+45,2.A.1.c,Writing,4.A.4.c.1,Performing Administrative Activities
+46,2.A.1.d,Speaking,4.A.2.b.4,Developing Objectives and Strategies
+47,2.A.1.d,Speaking,4.A.4.a.1,Interpreting the Meaning of Information for Others
+48,2.A.1.d,Speaking,4.A.4.a.2,"Communicating with Supervisors, Peers, or Subordinates"
+49,2.A.1.d,Speaking,4.A.4.a.3,Communicating with People Outside the Organization
+50,2.A.1.d,Speaking,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+51,2.A.1.d,Speaking,4.A.4.a.5,Assisting and Caring for Others
+52,2.A.1.d,Speaking,4.A.4.a.6,Selling or Influencing Others
+53,2.A.1.d,Speaking,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+54,2.A.1.d,Speaking,4.A.4.a.8,Performing for or Working Directly with the Public
+55,2.A.1.d,Speaking,4.A.4.b.1,Coordinating the Work and Activities of Others
+56,2.A.1.d,Speaking,4.A.4.b.2,Developing and Building Teams
+57,2.A.1.d,Speaking,4.A.4.b.3,Training and Teaching Others
+58,2.A.1.d,Speaking,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+59,2.A.1.d,Speaking,4.A.4.b.5,Coaching and Developing Others
+60,2.A.1.d,Speaking,4.A.4.b.6,Providing Consultation and Advice to Others
+61,2.A.1.d,Speaking,4.A.4.c.2,Staffing Organizational Units
+62,2.A.1.e,Mathematics,4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information"
+63,2.A.1.e,Mathematics,4.A.2.a.2,Processing Information
+64,2.A.2.a,Critical Thinking,4.A.1.a.1,Getting Information
+65,2.A.2.a,Critical Thinking,4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings"
+66,2.A.2.a,Critical Thinking,4.A.1.b.1,"Identifying Objects, Actions, and Events"
+67,2.A.2.a,Critical Thinking,4.A.1.b.2,"Inspecting Equipment, Structures, or Materials"
+68,2.A.2.a,Critical Thinking,4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information"
+69,2.A.2.a,Critical Thinking,4.A.2.a.3,Evaluating Information to Determine Compliance with Standards
+70,2.A.2.a,Critical Thinking,4.A.2.a.4,Analyzing Data or Information
+71,2.A.2.a,Critical Thinking,4.A.2.b.1,Making Decisions and Solving Problems
+72,2.A.2.a,Critical Thinking,4.A.2.b.2,Thinking Creatively
+73,2.A.2.a,Critical Thinking,4.A.2.b.4,Developing Objectives and Strategies
+74,2.A.2.a,Critical Thinking,4.A.2.b.5,Scheduling Work and Activities
+75,2.A.2.a,Critical Thinking,4.A.2.b.6,"Organizing, Planning, and Prioritizing Work"
+76,2.A.2.a,Critical Thinking,4.A.3.b.1,Working with Computers
+77,2.A.2.a,Critical Thinking,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+78,2.A.2.a,Critical Thinking,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+79,2.A.2.a,Critical Thinking,4.A.4.a.1,Interpreting the Meaning of Information for Others
+80,2.A.2.a,Critical Thinking,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+81,2.A.2.a,Critical Thinking,4.A.4.b.1,Coordinating the Work and Activities of Others
+82,2.A.2.a,Critical Thinking,4.A.4.b.2,Developing and Building Teams
+83,2.A.2.a,Critical Thinking,4.A.4.b.3,Training and Teaching Others
+84,2.A.2.a,Critical Thinking,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+85,2.A.2.a,Critical Thinking,4.A.4.b.5,Coaching and Developing Others
+86,2.A.2.a,Critical Thinking,4.A.4.b.6,Providing Consultation and Advice to Others
+87,2.A.2.a,Critical Thinking,4.A.4.c.2,Staffing Organizational Units
+88,2.A.2.a,Critical Thinking,4.A.4.c.3,Monitoring and Controlling Resources
+89,2.A.2.b,Active Learning,4.A.2.b.1,Making Decisions and Solving Problems
+90,2.A.2.b,Active Learning,4.A.2.b.3,Updating and Using Relevant Knowledge
+91,2.A.2.b,Active Learning,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+92,2.A.2.b,Active Learning,4.A.4.b.3,Training and Teaching Others
+93,2.A.2.b,Active Learning,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+94,2.A.2.c,Learning Strategies,4.A.2.b.3,Updating and Using Relevant Knowledge
+95,2.A.2.c,Learning Strategies,4.A.4.b.3,Training and Teaching Others
+96,2.A.2.c,Learning Strategies,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+97,2.A.2.c,Learning Strategies,4.A.4.b.5,Coaching and Developing Others
+98,2.A.2.d,Monitoring,4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings"
+99,2.A.2.d,Monitoring,4.A.2.a.1,"Judging the Qualities of Objects, Services, or People"
+100,2.A.2.d,Monitoring,4.A.4.a.5,Assisting and Caring for Others
+101,2.A.2.d,Monitoring,4.A.4.a.6,Selling or Influencing Others
+102,2.A.2.d,Monitoring,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+103,2.A.2.d,Monitoring,4.A.4.b.1,Coordinating the Work and Activities of Others
+104,2.A.2.d,Monitoring,4.A.4.b.2,Developing and Building Teams
+105,2.A.2.d,Monitoring,4.A.4.b.3,Training and Teaching Others
+106,2.A.2.d,Monitoring,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+107,2.A.2.d,Monitoring,4.A.4.b.5,Coaching and Developing Others
+108,2.A.2.d,Monitoring,4.A.4.b.6,Providing Consultation and Advice to Others
+109,2.A.2.d,Monitoring,4.A.4.c.2,Staffing Organizational Units
+110,2.A.2.d,Monitoring,4.A.4.c.3,Monitoring and Controlling Resources
+111,2.B.1.a,Social Perceptiveness,4.A.4.a.1,Interpreting the Meaning of Information for Others
+112,2.B.1.a,Social Perceptiveness,4.A.4.a.3,Communicating with People Outside the Organization
+113,2.B.1.a,Social Perceptiveness,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+114,2.B.1.a,Social Perceptiveness,4.A.4.a.5,Assisting and Caring for Others
+115,2.B.1.a,Social Perceptiveness,4.A.4.a.6,Selling or Influencing Others
+116,2.B.1.a,Social Perceptiveness,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+117,2.B.1.a,Social Perceptiveness,4.A.4.a.8,Performing for or Working Directly with the Public
+118,2.B.1.a,Social Perceptiveness,4.A.4.b.1,Coordinating the Work and Activities of Others
+119,2.B.1.a,Social Perceptiveness,4.A.4.b.2,Developing and Building Teams
+120,2.B.1.a,Social Perceptiveness,4.A.4.b.3,Training and Teaching Others
+121,2.B.1.a,Social Perceptiveness,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+122,2.B.1.a,Social Perceptiveness,4.A.4.b.5,Coaching and Developing Others
+123,2.B.1.a,Social Perceptiveness,4.A.4.b.6,Providing Consultation and Advice to Others
+124,2.B.1.a,Social Perceptiveness,4.A.4.c.2,Staffing Organizational Units
+125,2.B.1.b,Coordination,4.A.2.b.5,Scheduling Work and Activities
+126,2.B.1.b,Coordination,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+127,2.B.1.b,Coordination,4.A.4.a.5,Assisting and Caring for Others
+128,2.B.1.b,Coordination,4.A.4.a.6,Selling or Influencing Others
+129,2.B.1.b,Coordination,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+130,2.B.1.b,Coordination,4.A.4.a.8,Performing for or Working Directly with the Public
+131,2.B.1.b,Coordination,4.A.4.b.1,Coordinating the Work and Activities of Others
+132,2.B.1.b,Coordination,4.A.4.b.2,Developing and Building Teams
+133,2.B.1.b,Coordination,4.A.4.b.3,Training and Teaching Others
+134,2.B.1.b,Coordination,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+135,2.B.1.b,Coordination,4.A.4.b.5,Coaching and Developing Others
+136,2.B.1.b,Coordination,4.A.4.b.6,Providing Consultation and Advice to Others
+137,2.B.1.c,Persuasion,4.A.4.a.3,Communicating with People Outside the Organization
+138,2.B.1.c,Persuasion,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+139,2.B.1.c,Persuasion,4.A.4.a.6,Selling or Influencing Others
+140,2.B.1.c,Persuasion,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+141,2.B.1.c,Persuasion,4.A.4.b.1,Coordinating the Work and Activities of Others
+142,2.B.1.c,Persuasion,4.A.4.b.2,Developing and Building Teams
+143,2.B.1.c,Persuasion,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+144,2.B.1.c,Persuasion,4.A.4.b.5,Coaching and Developing Others
+145,2.B.1.c,Persuasion,4.A.4.b.6,Providing Consultation and Advice to Others
+146,2.B.1.c,Persuasion,4.A.4.c.2,Staffing Organizational Units
+147,2.B.1.d,Negotiation,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+148,2.B.1.d,Negotiation,4.A.4.b.1,Coordinating the Work and Activities of Others
+149,2.B.1.d,Negotiation,4.A.4.b.2,Developing and Building Teams
+150,2.B.1.d,Negotiation,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+151,2.B.1.d,Negotiation,4.A.4.c.2,Staffing Organizational Units
+152,2.B.1.e,Instructing,4.A.3.b.2,"Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment"
+153,2.B.1.e,Instructing,4.A.4.a.1,Interpreting the Meaning of Information for Others
+154,2.B.1.e,Instructing,4.A.4.b.3,Training and Teaching Others
+155,2.B.1.e,Instructing,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+156,2.B.1.e,Instructing,4.A.4.b.5,Coaching and Developing Others
+157,2.B.1.e,Instructing,4.A.4.b.6,Providing Consultation and Advice to Others
+158,2.B.1.f,Service Orientation,4.A.4.a.3,Communicating with People Outside the Organization
+159,2.B.1.f,Service Orientation,4.A.4.a.4,Establishing and Maintaining Interpersonal Relationships
+160,2.B.1.f,Service Orientation,4.A.4.a.5,Assisting and Caring for Others
+161,2.B.1.f,Service Orientation,4.A.4.a.6,Selling or Influencing Others
+162,2.B.1.f,Service Orientation,4.A.4.a.7,Resolving Conflicts and Negotiating with Others
+163,2.B.1.f,Service Orientation,4.A.4.a.8,Performing for or Working Directly with the Public
+164,2.B.1.f,Service Orientation,4.A.4.b.1,Coordinating the Work and Activities of Others
+165,2.B.1.f,Service Orientation,4.A.4.b.2,Developing and Building Teams
+166,2.B.1.f,Service Orientation,4.A.4.b.3,Training and Teaching Others
+167,2.B.1.f,Service Orientation,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+168,2.B.1.f,Service Orientation,4.A.4.b.5,Coaching and Developing Others
+169,2.B.1.f,Service Orientation,4.A.4.b.6,Providing Consultation and Advice to Others
+170,2.B.2.i,Complex Problem Solving,4.A.2.b.1,Making Decisions and Solving Problems
+171,2.B.2.i,Complex Problem Solving,4.A.2.b.4,Developing Objectives and Strategies
+172,2.B.2.i,Complex Problem Solving,4.A.2.b.6,"Organizing, Planning, and Prioritizing Work"
+173,2.B.2.i,Complex Problem Solving,4.A.3.b.1,Working with Computers
+174,2.B.2.i,Complex Problem Solving,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+175,2.B.2.i,Complex Problem Solving,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+176,2.B.2.i,Complex Problem Solving,4.A.4.b.6,Providing Consultation and Advice to Others
+177,2.B.2.i,Complex Problem Solving,4.A.4.c.3,Monitoring and Controlling Resources
+178,2.B.3.b,Technology Design,4.A.2.b.2,Thinking Creatively
+179,2.B.3.c,Equipment Selection,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+180,2.B.3.c,Equipment Selection,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+181,2.B.3.e,Programming,4.A.3.b.1,Working with Computers
+182,2.B.3.g,Operations Monitoring,4.A.1.a.2,"Monitoring Processes, Materials, or Surroundings"
+183,2.B.3.g,Operations Monitoring,4.A.1.b.2,"Inspecting Equipment, Structures, or Materials"
+184,2.B.3.g,Operations Monitoring,4.A.3.a.3,Controlling Machines and Processes
+185,2.B.3.g,Operations Monitoring,4.A.3.a.4,"Operating Vehicles, Mechanized Devices, or Equipment"
+186,2.B.3.g,Operations Monitoring,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+187,2.B.3.g,Operations Monitoring,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+188,2.B.3.h,Operation and Control,4.A.3.a.3,Controlling Machines and Processes
+189,2.B.3.h,Operation and Control,4.A.3.a.4,"Operating Vehicles, Mechanized Devices, or Equipment"
+190,2.B.3.j,Equipment Maintenance,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+191,2.B.3.j,Equipment Maintenance,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+192,2.B.3.k,Troubleshooting,4.A.1.b.2,"Inspecting Equipment, Structures, or Materials"
+193,2.B.3.k,Troubleshooting,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+194,2.B.3.k,Troubleshooting,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+195,2.B.3.l,Repairing,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+196,2.B.3.l,Repairing,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+197,2.B.3.m,Quality Control Analysis,4.A.1.b.2,"Inspecting Equipment, Structures, or Materials"
+198,2.B.3.m,Quality Control Analysis,4.A.3.b.4,Repairing and Maintaining Mechanical Equipment
+199,2.B.3.m,Quality Control Analysis,4.A.3.b.5,Repairing and Maintaining Electronic Equipment
+200,2.B.4.e,Judgment and Decision Making,4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information"
+201,2.B.4.e,Judgment and Decision Making,4.A.2.b.1,Making Decisions and Solving Problems
+202,2.B.4.e,Judgment and Decision Making,4.A.2.b.4,Developing Objectives and Strategies
+203,2.B.4.e,Judgment and Decision Making,4.A.2.b.6,"Organizing, Planning, and Prioritizing Work"
+204,2.B.4.e,Judgment and Decision Making,4.A.4.b.3,Training and Teaching Others
+205,2.B.4.e,Judgment and Decision Making,4.A.4.b.6,Providing Consultation and Advice to Others
+206,2.B.4.e,Judgment and Decision Making,4.A.4.c.2,Staffing Organizational Units
+207,2.B.4.e,Judgment and Decision Making,4.A.4.c.3,Monitoring and Controlling Resources
+208,2.B.4.g,Systems Analysis,4.A.2.b.4,Developing Objectives and Strategies
+209,2.B.4.g,Systems Analysis,4.A.2.b.6,"Organizing, Planning, and Prioritizing Work"
+210,2.B.4.g,Systems Analysis,4.A.3.b.1,Working with Computers
+211,2.B.4.g,Systems Analysis,4.A.4.b.6,Providing Consultation and Advice to Others
+212,2.B.4.h,Systems Evaluation,4.A.2.b.1,Making Decisions and Solving Problems
+213,2.B.4.h,Systems Evaluation,4.A.2.b.4,Developing Objectives and Strategies
+214,2.B.4.h,Systems Evaluation,4.A.4.b.6,Providing Consultation and Advice to Others
+215,2.B.5.a,Time Management,4.A.2.b.3,Updating and Using Relevant Knowledge
+216,2.B.5.a,Time Management,4.A.2.b.5,Scheduling Work and Activities
+217,2.B.5.a,Time Management,4.A.2.b.6,"Organizing, Planning, and Prioritizing Work"
+218,2.B.5.a,Time Management,4.A.4.b.1,Coordinating the Work and Activities of Others
+219,2.B.5.a,Time Management,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+220,2.B.5.a,Time Management,4.A.4.c.1,Performing Administrative Activities
+221,2.B.5.b,Management of Financial Resources,4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information"
+222,2.B.5.b,Management of Financial Resources,4.A.4.c.3,Monitoring and Controlling Resources
+223,2.B.5.c,Management of Material Resources,4.A.1.b.3,"Estimating the Quantifiable Characteristics of Products, Events, or Information"
+224,2.B.5.c,Management of Material Resources,4.A.4.c.3,Monitoring and Controlling Resources
+225,2.B.5.d,Management of Personnel Resources,4.A.2.b.5,Scheduling Work and Activities
+226,2.B.5.d,Management of Personnel Resources,4.A.4.b.1,Coordinating the Work and Activities of Others
+227,2.B.5.d,Management of Personnel Resources,4.A.4.b.2,Developing and Building Teams
+228,2.B.5.d,Management of Personnel Resources,4.A.4.b.3,Training and Teaching Others
+229,2.B.5.d,Management of Personnel Resources,4.A.4.b.4,"Guiding, Directing, and Motivating Subordinates"
+230,2.B.5.d,Management of Personnel Resources,4.A.4.b.5,Coaching and Developing Others
+231,2.B.5.d,Management of Personnel Resources,4.A.4.c.2,Staffing Organizational Units
+232,2.B.5.d,Management of Personnel Resources,4.A.4.c.3,Monitoring and Controlling Resources
