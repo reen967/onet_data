@@ -54,7 +54,7 @@ def display_occupation_data(occupation_data):
 @st.cache_data
 def load_occupation_codes():
     try:
-        url = "https://raw.githubusercontent.com/johnsmith/onet_data/main/onet_data/occupation_data.csv"
+        url = "https://raw.githubusercontent.com/reen967/onet_data/main/onet_data/occupation_data.csv"
         df = pd.read_csv(url)
         
         # Check if the column exists
