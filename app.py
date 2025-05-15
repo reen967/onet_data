@@ -21,20 +21,6 @@ else:
 # Base URL for the O*NET API
 base_url = "https://services.onetcenter.org/ws/online/occupations/"
 
-# Update the function to use the raw file URL from GitHub for the CSV
-@st.cache_data
-def load_occupation_codes():
-    try:
-        # Replace this with your raw GitHub URL for the occupation_data.csv
-        url = "https://raw.githubusercontent.com/reen967/onet_data/refs/heads/main/occupation_data.csv"
-        
-        # Load the CSV file from GitHub
-        df = pd.read_csv(url)
-        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
-    except Exception as e:
-        st.error(f"Error loading CSV: {e}")
-        return []
-
 # Function to fetch occupation data using the O*NET API
 def fetch_occupation_data(occupation_code):
     url = f"{base_url}{occupation_code}/overview"
@@ -43,14 +29,10 @@ def fetch_occupation_data(occupation_code):
     }
     response = requests.get(url, headers=headers)
     
-    # Debugging: Check the full URL and response status
-    print(f"Request URL: {url}")
-    print(f"Response Status Code: {response.status_code}")
-
     if response.status_code == 200:
         return response.json()
     else:
-        st.error(f"Error fetching data for {occupation_code}: {response.status_code}")
+        st.error(f"Error fetching data: {response.status_code}")
         return None
 
 # Function to display occupation data
@@ -68,12 +50,31 @@ def display_occupation_data(occupation_data):
     else:
         st.write("No data available.")
 
+# Load occupation codes
+@st.cache_data
+def load_occupation_codes():
+    try:
+        url = "https://raw.githubusercontent.com/johnsmith/onet_data/main/onet_data/occupation_data.csv"
+        df = pd.read_csv(url)
+        
+        # Check if the column exists
+        if "O*NET-SOC Code" not in df.columns:
+            st.error("O*NET-SOC Code column not found in the CSV.")
+            return []
+        
+        # Debugging: Check what the data looks like
+        print(f"Loaded occupation data: {df.head()}")
+        
+        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
+    except Exception as e:
+        st.error(f"Error loading CSV: {e}")
+        return []
+
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-
 occupation_codes = load_occupation_codes()
 
-# Debugging: Check if the occupation_codes are loaded correctly
+# Debugging: Check if occupation_codes were loaded correctly
 print(f"Occupation codes loaded: {occupation_codes}")
 
 if occupation_codes:
@@ -83,11 +84,3 @@ if occupation_codes:
 else:
     st.error("No occupation codes found.")
 
-if occupation_codes:
-    st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
-    for occupation_code in occupation_codes:
-        st.write(f"Fetching data for: {occupation_code}")
-        occupation_data = fetch_occupation_data(occupation_code)
-        display_occupation_data(occupation_data)
-else:
-    st.write("No occupation codes found in the CSV.")
