@@ -18,39 +18,67 @@ else:
     st.success("API Key loaded successfully.")
     print(f"Loaded API Key: {api_key}")
 
-# Base URL for the O*NET API
-base_url = "https://services.onetcenter.org/ws/online/occupations/"
-
-# Update the function to use the raw file URL from GitHub for the CSV
+# Function to load occupation codes from CSV
 @st.cache_data
 def load_occupation_codes():
     try:
-        # Replace this with your raw GitHub URL for the occupation_data.csv
-        url = "https://raw.githubusercontent.com/<your-github-username>/<repo-name>/main/onet_data/occupation_data.csv"
-        
-        # Load the CSV file from GitHub
+        # Correct URL to the raw CSV file in GitHub
+        url = "https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv"  # Correct URL
         df = pd.read_csv(url)
-        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
+        
+        # Debugging: Check the first few rows of the data
+        print(f"Loaded occupation data: {df.head()}")
+        
+        # Ensure "O*NET-SOC Code" is the correct column name
+        if "O*NET-SOC Code" not in df.columns:
+            st.error("O*NET-SOC Code column not found in the CSV.")
+            return []
+        
+        # Return unique O*NET-SOC Codes
+        occupation_codes = df['O*NET-SOC Code'].dropna().unique()
+        
+        # Debugging: Check the occupation codes
+        print(f"Occupation codes found: {occupation_codes[:5]}")  # Print first 5 codes for debugging
+        
+        if len(occupation_codes) == 0:
+            st.error("No occupation codes found in the CSV.")
+            return []
+        
+        return occupation_codes
     except Exception as e:
         st.error(f"Error loading CSV: {e}")
         return []
 
+# Load occupation codes
+occupation_codes = load_occupation_codes()
+
+# Check if occupation codes are loaded properly
+if not occupation_codes:
+    st.error("No occupation codes found.")
+else:
+    # Sidebar to search occupation codes
+    st.sidebar.header("Search for an Occupation")
+    occupation_code = st.sidebar.selectbox("Select an occupation code", occupation_codes)
+    
+    if occupation_code:
+        st.write(f"You selected the occupation code: {occupation_code}")
+        # Proceed to fetch and display occupation data based on the selected occupation code
+        occupation_data = fetch_occupation_data(occupation_code)
+        display_occupation_data(occupation_data)
+
 # Function to fetch occupation data using the O*NET API
 def fetch_occupation_data(occupation_code):
+    base_url = "https://services.onetcenter.org/ws/online/occupations/"
     url = f"{base_url}{occupation_code}/overview"
     headers = {
         "Authorization": f"Basic {api_key}"
     }
     response = requests.get(url, headers=headers)
     
-    # Debugging: Check the full URL and response status
-    print(f"Request URL: {url}")
-    print(f"Response Status Code: {response.status_code}")
-
     if response.status_code == 200:
         return response.json()
     else:
-        st.error(f"Error fetching data for {occupation_code}: {response.status_code}")
+        st.error(f"Error fetching data: {response.status_code}")
         return None
 
 # Function to display occupation data
@@ -67,17 +95,3 @@ def display_occupation_data(occupation_data):
             st.write(f"- {related['title']} (Code: {related['code']})")
     else:
         st.write("No data available.")
-
-# Streamlit app UI
-st.sidebar.header("Search for an Occupation")
-occupation_codes = load_occupation_codes()
-
-if occupation_codes:
-    st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
-    for occupation_code in occupation_codes:
-        st.write(f"Fetching data for: {occupation_code}")
-        occupation_data = fetch_occupation_data(occupation_code)
-        display_occupation_data(occupation_data)
-else:
-    st.write("No occupation codes found in the CSV.")
-
