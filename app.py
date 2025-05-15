@@ -50,20 +50,21 @@ def display_occupation_data(occupation_data):
     else:
         st.write("No data available.")
 
-# Load occupation codes
+# Function to load occupation codes from CSV
 @st.cache_data
 def load_occupation_codes():
     try:
-        url = "https://raw.githubusercontent.com/reen967/onet_data/refs/heads/main/occupation_data.csv"
+        # Ensure you use the correct URL to the raw CSV file from GitHub
+        url = "https://raw.githubusercontent.com/johnsmith/onet_data/main/onet_data/occupation_data.csv"
         df = pd.read_csv(url)
-        
-        # Check if the column exists
-        if "O*NET-SOC Code" not in df.columns:
-            st.error("O*NET-SOC Code column not found in the CSV.")
-            return []
         
         # Debugging: Check what the data looks like
         print(f"Loaded occupation data: {df.head()}")
+        
+        # Ensure "O*NET-SOC Code" is the correct column name
+        if "O*NET-SOC Code" not in df.columns:
+            st.error("O*NET-SOC Code column not found in the CSV.")
+            return []
         
         return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
     except Exception as e:
@@ -74,13 +75,15 @@ def load_occupation_codes():
 st.sidebar.header("Search for an Occupation")
 occupation_codes = load_occupation_codes()
 
-# Debugging: Check if occupation_codes were loaded correctly
-print(f"Occupation codes loaded: {occupation_codes}")
+# Debugging: Check if occupation_codes is being loaded correctly
+if not occupation_codes:
+    st.error("No occupation codes found.")
+    print("Error: No occupation codes found.")
+else:
+    print(f"Loaded occupation codes: {occupation_codes}")
 
-if occupation_codes:
-    occupation_code = st.sidebar.selectbox("Choose an occupation", occupation_codes)
+occupation_code = st.sidebar.selectbox("Select an Occupation Code", occupation_codes)
+
+if occupation_code:
     occupation_data = fetch_occupation_data(occupation_code)
     display_occupation_data(occupation_data)
-else:
-    st.error("No occupation codes found.")
-
