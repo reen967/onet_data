@@ -33,9 +33,10 @@ def load_occupation_data(file_path, occupation_code):
         
         # Extract relevant data from the occupation row
         occupation_info = {
+            "pk": occupation_data.iloc[0] ["PK"]
+            "occupation_code": occupation_data.iloc[0] ["O*NET-SOC Code"]
             "title": occupation_data.iloc[0]["Title"],
             "description": occupation_data.iloc[0]["Description"],
-            "sample_of_reported_job_titles": occupation_data.iloc[0]["Sample of Reported Job Titles"],
             # You can add more fields as required
         }
         return occupation_info
@@ -46,10 +47,10 @@ def load_occupation_data(file_path, occupation_code):
 # Function to display occupation data
 def display_occupation_data(occupation_data):
     if occupation_data:
-        st.title(occupation_data["title"])
-        st.write(f"**Description**: {occupation_data['description']}")
-        st.write("**Sample Job Titles**:")
-        st.write(f"- {occupation_data['sample_of_reported_job_titles']}")
+        st.title(f"**PK**: {occupation_data["pk"]}"]
+        st.write(f"**O*NET-SOC Code**: {occupation_data['occupation_code']}")
+        st.write("**Title**: {occupation_data['title']}")
+        st.write("**Description**: {occupation_data['description']}")
     else:
         st.write("No data available for this occupation.")
 
