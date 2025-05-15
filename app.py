@@ -1,15 +1,16 @@
 import os
 import streamlit as st
+import requests
 import pandas as pd
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
 load_dotenv()
 
-# O*NET API key stored in the .env file (optional if you are no longer using API)
+# O*NET API key stored in the .env file
 api_key = os.getenv("ONET_API_KEY")
 
-# Check if the API key is loaded correctly (optional)
+# Debugging: Check if API key is loaded correctly
 if not api_key:
     st.error("API Key is missing or not loaded.")
     print("Error: API Key not found in .env or environment.")
@@ -17,63 +18,64 @@ else:
     st.success("API Key loaded successfully.")
     print(f"Loaded API Key: {api_key}")
 
-# Base URL for GitHub or Local CSV Files
-data_files_url = "https://raw.githubusercontent.com/your-username/your-repo-name/main/"
+# Base URL for the O*NET API
+base_url = "https://services.onetcenter.org/ws/online/occupations/"
 
-# List of CSV files available on GitHub repo
-data_files = [
-    "abilities.csv",
-    "abilities_descriptions.csv",
-    "abilities_to_work_activities.csv",
-    "abilities_to_work_context.csv",
-    "alternate_titles.csv",
-    "basic_interests_to_riasec.csv",
-    "content_model_reference.csv",
-    "frequency_of_task_categories.csv",
-    "interests.csv",
-    "interests_to_illustrative_activities.csv",
-    "interests_to_illustrative_occupations.csv",
-    "interests_to_riasec_keywords.csv",
-    "knowledge.csv",
-    "level_scale_anchors.csv",
-    "occupation_data.csv",
-    "related_occupations.csv",
-    "scales_reference.csv",
-    "skills.csv",
-    "skills_to_work_activities.csv",
-    "skills_to_work_context.csv",
-    "task_statements.csv",
-    "tasks_to_dwa.csv",
-    "technology_skills.csv",
-    "tools_used.csv",
-    "unspsc_reference.csv",
-    "work_activities.csv",
-    "work_activities_to_iwa.csv",
-    "work_activities_to_iwa_to_dwa.csv",
-    "work_context_categories.csv"
-]
-
-# Function to load data from GitHub or local storage
-def load_data(file_name):
-    url = f"{data_files_url}{file_name}"
+# Load the CSV file with O*NET codes
+@st.cache
+def load_occupation_codes(file_path):
     try:
-        data = pd.read_csv(url)
-        return data
+        df = pd.read_csv(file_path)
+        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
     except Exception as e:
-        st.error(f"Error loading {file_name}: {str(e)}")
+        st.error(f"Error loading CSV: {e}")
+        return []
+
+# Function to fetch occupation data using the O*NET API
+def fetch_occupation_data(occupation_code):
+    url = f"{base_url}{occupation_code}/overview"
+    headers = {
+        "Authorization": f"Basic {api_key}"
+    }
+    response = requests.get(url, headers=headers)
+    
+    # Debugging: Check the full URL and response status
+    print(f"Request URL: {url}")
+    print(f"Response Status Code: {response.status_code}")
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Error fetching data for {occupation_code}: {response.status_code}")
         return None
+
+# Function to display occupation data
+def display_occupation_data(occupation_data):
+    if occupation_data:
+        st.title(occupation_data["title"])
+        st.write(f"**Description**: {occupation_data['description']}")
+        st.write("**Sample Job Titles**:")
+        for job in occupation_data.get("sample_of_reported_job_titles", {}).get("title", []):
+            st.write(f"- {job}")
+        
+        st.write("**Related Occupations**:")
+        for related in occupation_data.get("also_see", {}).get("occupation", []):
+            st.write(f"- {related['title']} (Code: {related['code']})")
+    else:
+        st.write("No data available.")
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-occupation_code = st.sidebar.text_input("Enter the O*NET-SOC Code", "17-2051.00")
+file_path = st.sidebar.text_input("Enter the CSV file path", "onet_data.csv")
 
-if occupation_code:
-    st.header(f"Data for {occupation_code}")
+if file_path:
+    occupation_codes = load_occupation_codes(file_path)
+    if occupation_codes:
+        st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
+        for occupation_code in occupation_codes:
+            st.write(f"Fetching data for: {occupation_code}")
+            occupation_data = fetch_occupation_data(occupation_code)
+            display_occupation_data(occupation_data)
+    else:
+        st.write("No occupation codes found in the CSV.")
 
-    # Load relevant occupation data (assuming you want to filter by occupation code)
-    occupation_data = load_data("occupation_data.csv")
-    if occupation_data is not None:
-        filtered_data = occupation_data[occupation_data["O*NET-SOC Code"] == occupation_code]
-        st.write(filtered_data)
-    
-    # Add further data extraction here if needed, such as related work activities, tasks, etc.
