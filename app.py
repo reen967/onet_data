@@ -55,7 +55,7 @@ def display_occupation_data(occupation_data):
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-file_path = st.sidebar.text_input("Enter the CSV file path", "https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv")
+file_path = st.sidebar.text_input("Enter the CSV file path", "https://raw.githubusercontent.com/reen967/onet_data/refs/heads/main/occupation_data.csv")
 
 if file_path:
     occupation_codes = load_occupation_codes(file_path)
