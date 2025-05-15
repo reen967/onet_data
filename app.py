@@ -70,7 +70,18 @@ def display_occupation_data(occupation_data):
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
+
 occupation_codes = load_occupation_codes()
+
+# Debugging: Check if the occupation_codes are loaded correctly
+print(f"Occupation codes loaded: {occupation_codes}")
+
+if occupation_codes:
+    occupation_code = st.sidebar.selectbox("Choose an occupation", occupation_codes)
+    occupation_data = fetch_occupation_data(occupation_code)
+    display_occupation_data(occupation_data)
+else:
+    st.error("No occupation codes found.")
 
 if occupation_codes:
     st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
