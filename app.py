@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load data
-@st.cache
+@st.cache_data
 def load_data():
     # Load the linked data file (adjust the path as needed)
     linked_data = pd.read_csv('linked_data.csv')
