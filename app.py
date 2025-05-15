@@ -26,7 +26,7 @@ base_url = "https://services.onetcenter.org/ws/online/occupations/"
 def load_occupation_codes():
     try:
         # Replace this with your raw GitHub URL for the occupation_data.csv
-        url = "https://raw.githubusercontent.com/reen967/onet_data/blob/main/occupation_data.csv"
+        url = "https://raw.githubusercontent.com/reen967/onet_data/refs/heads/main/occupation_data.csv"
         
         # Load the CSV file from GitHub
         df = pd.read_csv(url)
