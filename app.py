@@ -21,12 +21,15 @@ else:
 # Base URL for the O*NET API
 base_url = "https://services.onetcenter.org/ws/online/occupations/"
 
-# Update the function to use st.cache_data instead of the deprecated st.cache
+# Update the function to use the raw file URL from GitHub for the CSV
 @st.cache_data
 def load_occupation_codes():
     try:
-        # Load the CSV files directly from the repo (ensure the file name is correct)
-        df = pd.read_csv("reen967/onet_data/blob/main/occupation_data.csv")  # Adjust this path if necessary
+        # Replace this with your raw GitHub URL for the occupation_data.csv
+        url = "https://raw.githubusercontent.com/reen967/onet_data/blob/main/occupation_data.csv"
+        
+        # Load the CSV file from GitHub
+        df = pd.read_csv(url)
         return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
     except Exception as e:
         st.error(f"Error loading CSV: {e}")
@@ -77,5 +80,3 @@ if occupation_codes:
         display_occupation_data(occupation_data)
 else:
     st.write("No occupation codes found in the CSV.")
-
-
