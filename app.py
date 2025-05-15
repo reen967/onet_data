@@ -55,7 +55,7 @@ def display_occupation_data(occupation_data):
 def load_occupation_codes():
     try:
         # Ensure you use the correct URL to the raw CSV file from GitHub
-        url = "https://raw.githubusercontent.com/johnsmith/onet_data/main/onet_data/occupation_data.csv"
+        url = "https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv"
         df = pd.read_csv(url)
         
         # Debugging: Check what the data looks like
