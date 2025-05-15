@@ -1,52 +1,46 @@
 import os
 import streamlit as st
-import requests
 import pandas as pd
-from dotenv import load_dotenv
 
-# Load environment variables from the .env file
-load_dotenv()
-
-# O*NET API key stored in the .env file
-api_key = os.getenv("ONET_API_KEY")
-
-# Debugging: Check if API key is loaded correctly
-if not api_key:
-    st.error("API Key is missing or not loaded.")
-    print("Error: API Key not found in .env or environment.")
-else:
-    st.success("API Key loaded successfully.")
-    print(f"Loaded API Key: {api_key}")
-
-# Base URL for the O*NET API
-base_url = "https://services.onetcenter.org/ws/online/occupations/"
-
-# Load the CSV file with O*NET codes
-@st.cache
+# Function to load occupation codes from CSV file
+@st.cache_data
 def load_occupation_codes(file_path):
     try:
+        # Read the CSV file
         df = pd.read_csv(file_path)
-        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
+        # Ensure the column exists and extract unique occupation codes
+        if 'O*NET-SOC Code' not in df.columns:
+            st.error("The 'O*NET-SOC Code' column is missing in the CSV file.")
+            return []
+        
+        occupation_codes = df['O*NET-SOC Code'].dropna().unique()
+        return occupation_codes
     except Exception as e:
         st.error(f"Error loading CSV: {e}")
         return []
 
-# Function to fetch occupation data using the O*NET API
-def fetch_occupation_data(occupation_code):
-    url = f"{base_url}{occupation_code}/overview"
-    headers = {
-        "Authorization": f"Basic {api_key}"
-    }
-    response = requests.get(url, headers=headers)
-    
-    # Debugging: Check the full URL and response status
-    print(f"Request URL: {url}")
-    print(f"Response Status Code: {response.status_code}")
-
-    if response.status_code == 200:
-        return response.json()
-    else:
-        st.error(f"Error fetching data for {occupation_code}: {response.status_code}")
+# Function to load occupation data from CSV based on occupation code
+@st.cache_data
+def load_occupation_data(file_path, occupation_code):
+    try:
+        # Read the CSV file
+        df = pd.read_csv(file_path)
+        # Filter the dataframe by occupation code
+        occupation_data = df[df['O*NET-SOC Code'] == occupation_code]
+        
+        if occupation_data.empty:
+            return None
+        
+        # Extract relevant data from the occupation row
+        occupation_info = {
+            "title": occupation_data.iloc[0]["Title"],
+            "description": occupation_data.iloc[0]["Description"],
+            "sample_of_reported_job_titles": occupation_data.iloc[0]["Sample of Reported Job Titles"],
+            # You can add more fields as required
+        }
+        return occupation_info
+    except Exception as e:
+        st.error(f"Error loading occupation data: {e}")
         return None
 
 # Function to display occupation data
@@ -55,27 +49,21 @@ def display_occupation_data(occupation_data):
         st.title(occupation_data["title"])
         st.write(f"**Description**: {occupation_data['description']}")
         st.write("**Sample Job Titles**:")
-        for job in occupation_data.get("sample_of_reported_job_titles", {}).get("title", []):
-            st.write(f"- {job}")
-        
-        st.write("**Related Occupations**:")
-        for related in occupation_data.get("also_see", {}).get("occupation", []):
-            st.write(f"- {related['title']} (Code: {related['code']})")
+        st.write(f"- {occupation_data['sample_of_reported_job_titles']}")
     else:
-        st.write("No data available.")
+        st.write("No data available for this occupation.")
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-file_path = st.sidebar.text_input("Enter the CSV file path", "onet_data.csv")
+file_path = st.sidebar.text_input("Enter the CSV file path", "https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv")
 
 if file_path:
     occupation_codes = load_occupation_codes(file_path)
     if occupation_codes:
-        st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
-        for occupation_code in occupation_codes:
+        occupation_code = st.sidebar.selectbox("Select an Occupation Code", occupation_codes)
+        if occupation_code:
             st.write(f"Fetching data for: {occupation_code}")
-            occupation_data = fetch_occupation_data(occupation_code)
+            occupation_data = load_occupation_data(file_path, occupation_code)
             display_occupation_data(occupation_data)
     else:
         st.write("No occupation codes found in the CSV.")
-
