@@ -56,14 +56,42 @@ occupation_codes = load_occupation_codes()
 if not occupation_codes:
     st.error("No occupation codes found.")
 else:
-    # Proceed with your app logic
-    st.write(f"Found {len(occupation_codes)} occupation codes.")
-    st.write("Example codes:", occupation_codes[:5])  # Display first 5 codes as a sample
-
-    # Your Streamlit app logic to handle occupation code input and display data
-    # (Example: display a dropdown with occupation codes)
-    occupation_code = st.selectbox("Select an occupation code", occupation_codes)
+    # Sidebar to search occupation codes
+    st.sidebar.header("Search for an Occupation")
+    occupation_code = st.sidebar.selectbox("Select an occupation code", occupation_codes)
     
     if occupation_code:
-        # Your existing code to fetch and display occupation data based on the selected occupation code
-        pass
+        st.write(f"You selected the occupation code: {occupation_code}")
+        # Proceed to fetch and display occupation data based on the selected occupation code
+        occupation_data = fetch_occupation_data(occupation_code)
+        display_occupation_data(occupation_data)
+
+# Function to fetch occupation data using the O*NET API
+def fetch_occupation_data(occupation_code):
+    base_url = "https://services.onetcenter.org/ws/online/occupations/"
+    url = f"{base_url}{occupation_code}/overview"
+    headers = {
+        "Authorization": f"Basic {api_key}"
+    }
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Error fetching data: {response.status_code}")
+        return None
+
+# Function to display occupation data
+def display_occupation_data(occupation_data):
+    if occupation_data:
+        st.title(occupation_data["title"])
+        st.write(f"**Description**: {occupation_data['description']}")
+        st.write("**Sample Job Titles**:")
+        for job in occupation_data.get("sample_of_reported_job_titles", {}).get("title", []):
+            st.write(f"- {job}")
+        
+        st.write("**Related Occupations**:")
+        for related in occupation_data.get("also_see", {}).get("occupation", []):
+            st.write(f"- {related['title']} (Code: {related['code']})")
+    else:
+        st.write("No data available.")
