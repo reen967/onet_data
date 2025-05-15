@@ -95,4 +95,3 @@ def display_occupation_data(occupation_data):
             st.write(f"- {related['title']} (Code: {related['code']})")
     else:
         st.write("No data available.")
-
