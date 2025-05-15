@@ -1,125 +1,73 @@
 import streamlit as st
 import pandas as pd
 
-# Load all CSV files into pandas DataFrames
+# Load CSV files
 @st.cache_data
 def load_data():
-    # Load all CSV files into pandas DataFrames
     occupation_data = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv")
     abilities = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/abilities.csv")
     skills = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/skills.csv")
     task_statements = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/task_statements.csv")
-    tools_used = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/tools_used.csv")
     work_activities = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/work_activities.csv")
     work_context = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/work_context_categories.csv")
     scale_reference = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/scales_reference.csv")
     
-    return {
-        "occupation_data": occupation_data,
-        "abilities": abilities,
-        "skills": skills,
-        "task_statements": task_statements,
-        "tools_used": tools_used,
-        "work_activities": work_activities,
-        "work_context": work_context,
-        "scale_reference": scale_reference
-    }
+    return occupation_data, abilities, skills, task_statements, work_activities, work_context, scale_reference
 
-# Merge data with scale reference for better context
+# Merge with Scale Reference to provide clarity
 def merge_with_scale_reference(data, scale_reference):
-    # Merge the DataFrame with scale reference to clarify what the scale values mean
     data_with_scale = data.merge(scale_reference, how="left", left_on="Scale ID", right_on="Scale ID")
     return data_with_scale
 
-# Streamlit app UI
-st.sidebar.header("Filter Data by Categories and Scales")
+# Filtering function based on Data Value and Scale
+def filter_data(data, min_value):
+    return data[data['Data Value'] >= min_value]
 
-# Add sliders for Data Value categories (Importance, Level, etc.) and set default minimum values
-min_abilities_value = st.sidebar.slider("Minimum Data Value for Abilities", 0.0, 5.0, 0.0, 0.1)
-min_skills_value = st.sidebar.slider("Minimum Data Value for Skills", 0.0, 5.0, 0.0, 0.1)
-min_tasks_value = st.sidebar.slider("Minimum Data Value for Tasks", 0.0, 5.0, 0.0, 0.1)
-min_work_activities_value = st.sidebar.slider("Minimum Data Value for Work Activities", 0.0, 5.0, 0.0, 0.1)
-min_tools_value = st.sidebar.slider("Minimum Data Value for Tools", 0.0, 5.0, 0.0, 0.1)
-min_work_context_value = st.sidebar.slider("Minimum Data Value for Work Context", 0.0, 5.0, 0.0, 0.1)
+# Streamlit UI for filtering data values
+st.sidebar.header("Filter Data")
+min_value = st.sidebar.slider("Minimum Data Value", 0.0, 5.0, 0.0, 0.1)
 
-# Load all data
-data = load_data()
+# Load data
+occupation_data, abilities, skills, task_statements, work_activities, work_context, scale_reference = load_data()
 
-# Apply the filtering based on sliders (Data Value filters)
-min_values = {
-    'abilities': min_abilities_value,
-    'skills': min_skills_value,
-    'tasks': min_tasks_value,
-    'work_activities': min_work_activities_value,
-    'tools': min_tools_value,
-    'work_context': min_work_context_value
-}
+# Merge data with scale reference
+abilities_with_scale = merge_with_scale_reference(abilities, scale_reference)
+skills_with_scale = merge_with_scale_reference(skills, scale_reference)
+task_with_scale = merge_with_scale_reference(task_statements, scale_reference)
+work_activities_with_scale = merge_with_scale_reference(work_activities, scale_reference)
+work_context_with_scale = merge_with_scale_reference(work_context, scale_reference)
 
-# Merge each dataset with the scale reference
-abilities_with_scale = merge_with_scale_reference(data['abilities'], data['scale_reference'])
-skills_with_scale = merge_with_scale_reference(data['skills'], data['scale_reference'])
-tasks_with_scale = merge_with_scale_reference(data['task_statements'], data['scale_reference'])
-work_activities_with_scale = merge_with_scale_reference(data['work_activities'], data['scale_reference'])
-tools_with_scale = merge_with_scale_reference(data['tools_used'], data['scale_reference'])
-work_context_with_scale = merge_with_scale_reference(data['work_context'], data['scale_reference'])
-
-# Function to filter data based on Data Values and show detailed results
-def filter_data_by_value(data, min_values):
-    filtered_abilities = data['abilities'][data['abilities']['Data Value'] >= min_values['abilities']]
-    filtered_skills = data['skills'][data['skills']['Data Value'] >= min_values['skills']]
-    filtered_tasks = data['task_statements'][data['task_statements']['Data Value'] >= min_values['tasks']]
-    filtered_work_activities = data['work_activities'][data['work_activities']['Data Value'] >= min_values['work_activities']]
-    filtered_tools = data['tools_used'][data['tools_used']['Data Value'] >= min_values['tools']]
-    filtered_work_context = data['work_context'][data['work_context']['Data Value'] >= min_values['work_context']]
-    
-    return {
-        "abilities": filtered_abilities,
-        "skills": filtered_skills,
-        "tasks": filtered_tasks,
-        "work_activities": filtered_work_activities,
-        "tools_used": filtered_tools,
-        "work_context": filtered_work_context
-    }
-
-# Apply the filter function with minimum values
-filtered_data = filter_data_by_value(data, min_values)
+# Filter data by minimum Data Value
+filtered_abilities = filter_data(abilities_with_scale, min_value)
+filtered_skills = filter_data(skills_with_scale, min_value)
+filtered_tasks = filter_data(task_with_scale, min_value)
+filtered_work_activities = filter_data(work_activities_with_scale, min_value)
+filtered_work_context = filter_data(work_context_with_scale, min_value)
 
 # Display the filtered results
-st.title("Filtered Occupation Data")
-st.write("The results below show data for Abilities, Skills, Tasks, Tools, and Work Activities filtered based on the selected minimum Data Values.")
+st.title("Filtered Occupation Data Based on Automation Criteria")
+st.write("Showing occupations where the data value meets or exceeds the minimum filter threshold.")
 
 # Display filtered abilities
 st.subheader("Abilities")
-st.write(filtered_data['abilities'])
+st.write(filtered_abilities[['Abilities Element Name', 'Scale Name', 'Data Value']])
 
 # Display filtered skills
 st.subheader("Skills")
-st.write(filtered_data['skills'])
+st.write(filtered_skills[['Skills Element Name', 'Scale Name', 'Data Value']])
 
 # Display filtered tasks
 st.subheader("Tasks")
-st.write(filtered_data['tasks'])
+st.write(filtered_tasks[['Task Title', 'Scale Name', 'Data Value']])
 
 # Display filtered work activities
 st.subheader("Work Activities")
-st.write(filtered_data['work_activities'])
+st.write(filtered_work_activities[['Work Activities Element Name', 'Scale Name', 'Data Value']])
 
-# Display filtered tools used
-st.subheader("Tools Used")
-st.write(filtered_data['tools_used'])
+# Display filtered work context
+st.subheader("Work Context")
+st.write(filtered_work_context[['Work Context Element Name', 'Scale Name', 'Data Value']])
 
-# Display filtered work context (to assess if the occupation involves dangerous or automation-suitable work)
-st.subheader("Work Context (Danger Assessment)")
-st.write(filtered_data['work_context'])
-
-# Show the scale references for each filtered entry
-st.subheader("Scale References")
-st.write("Scale names and their descriptions help understand what the Data Value represents.")
-
-st.write(abilities_with_scale[['Abilities Element Name', 'Scale Name', 'Data Value']])
-st.write(skills_with_scale[['Skills Element Name', 'Scale Name', 'Data Value']])
-st.write(tasks_with_scale[['Task Title', 'Scale Name', 'Data Value']])
-st.write(work_activities_with_scale[['Work Activities Element Name', 'Scale Name', 'Data Value']])
-st.write(tools_with_scale[['Example', 'Scale Name', 'Data Value']])
-st.write(work_context_with_scale[['Work Context Element Name', 'Scale Name', 'Data Value']])
-
+# Display scale reference details for context
+st.subheader("Scale Reference Definitions")
+st.write(scale_reference[['Scale Name', 'Minimum', 'Maximum']])
