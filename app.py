@@ -26,7 +26,7 @@ base_url = "https://services.onetcenter.org/ws/online/occupations/"
 def load_occupation_codes():
     try:
         # Load the CSV files directly from the repo (ensure the file name is correct)
-        df = pd.read_csv("onet_data/blob/main/occupation_data.csv")  # Adjust this path if necessary
+        df = pd.read_csv("reen967/onet_data/blob/main/occupation_data.csv")  # Adjust this path if necessary
         return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
     except Exception as e:
         st.error(f"Error loading CSV: {e}")
