@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 import requests
-import pandas as pd
+import xml.etree.ElementTree as ET
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
@@ -21,16 +21,6 @@ else:
 # Base URL for the O*NET API
 base_url = "https://services.onetcenter.org/ws/online/occupations/"
 
-# Load the CSV file with O*NET codes
-@st.cache
-def load_occupation_codes(file_path):
-    try:
-        df = pd.read_csv(file_path)
-        return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
-    except Exception as e:
-        st.error(f"Error loading CSV: {e}")
-        return []
-
 # Function to fetch occupation data using the O*NET API
 def fetch_occupation_data(occupation_code):
     url = f"{base_url}{occupation_code}/overview"
@@ -46,7 +36,7 @@ def fetch_occupation_data(occupation_code):
     if response.status_code == 200:
         return response.json()
     else:
-        st.error(f"Error fetching data for {occupation_code}: {response.status_code}")
+        st.error(f"Error fetching data: {response.status_code}")
         return None
 
 # Function to display occupation data
@@ -66,16 +56,9 @@ def display_occupation_data(occupation_data):
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-file_path = st.sidebar.text_input("Enter the CSV file path", "onet_data.csv")
+occupation_code = st.sidebar.text_input("Enter the O*NET-SOC Code", "17-2051.00")
 
-if file_path:
-    occupation_codes = load_occupation_codes(file_path)
-    if occupation_codes:
-        st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
-        for occupation_code in occupation_codes:
-            st.write(f"Fetching data for: {occupation_code}")
-            occupation_data = fetch_occupation_data(occupation_code)
-            display_occupation_data(occupation_data)
-    else:
-        st.write("No occupation codes found in the CSV.")
+if occupation_code:
+    occupation_data = fetch_occupation_data(occupation_code)
+    display_occupation_data(occupation_data)
 
