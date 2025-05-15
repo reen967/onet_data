@@ -21,12 +21,11 @@ else:
 # Base URL for the O*NET API
 base_url = "https://services.onetcenter.org/ws/online/occupations/"
 
-# Update the function to use st.cache_data instead of the deprecated st.cache
-@st.cache_data
-def load_occupation_codes():
+# Load the CSV file with O*NET codes
+@st.cache
+def load_occupation_codes(file_path):
     try:
-        # Load the CSV files directly from the repo (ensure the file name is correct)
-        df = pd.read_csv("onet_data/occupation_data.csv")  # Adjust this path if necessary
+        df = pd.read_csv(file_path)
         return df['O*NET-SOC Code'].dropna().unique()  # Extract unique O*NET-SOC Codes
     except Exception as e:
         st.error(f"Error loading CSV: {e}")
@@ -67,13 +66,16 @@ def display_occupation_data(occupation_data):
 
 # Streamlit app UI
 st.sidebar.header("Search for an Occupation")
-occupation_codes = load_occupation_codes()
+file_path = st.sidebar.text_input("Enter the CSV file path", "onet_data.csv")
 
-if occupation_codes:
-    st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
-    for occupation_code in occupation_codes:
-        st.write(f"Fetching data for: {occupation_code}")
-        occupation_data = fetch_occupation_data(occupation_code)
-        display_occupation_data(occupation_data)
-else:
-    st.write("No occupation codes found in the CSV.")
+if file_path:
+    occupation_codes = load_occupation_codes(file_path)
+    if occupation_codes:
+        st.write(f"Found {len(occupation_codes)} occupation codes in the file.")
+        for occupation_code in occupation_codes:
+            st.write(f"Fetching data for: {occupation_code}")
+            occupation_data = fetch_occupation_data(occupation_code)
+            display_occupation_data(occupation_data)
+    else:
+        st.write("No occupation codes found in the CSV.")
+
