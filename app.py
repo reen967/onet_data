@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load all CSV files into pandas DataFrames
-@st.cache_data
+@st.cache
 def load_data():
     # Load all CSV files into pandas DataFrames
     occupation_data = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv")
@@ -12,6 +12,7 @@ def load_data():
     tools_used = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/tools_used.csv")
     work_activities = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/work_activities.csv")
     work_context = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/work_context_categories.csv")
+    scale_reference = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/scales_reference.csv")
     
     return {
         "occupation_data": occupation_data,
@@ -20,26 +21,15 @@ def load_data():
         "task_statements": task_statements,
         "tools_used": tools_used,
         "work_activities": work_activities,
-        "work_context": work_context
+        "work_context": work_context,
+        "scale_reference": scale_reference
     }
 
-# Filter data based on minimum Data Value for each table
-def filter_data_by_value(data, min_values):
-    abilities = data['abilities'][data['abilities']['Data Value'] >= min_values['abilities']]
-    skills = data['skills'][data['skills']['Data Value'] >= min_values['skills']]
-    tasks = data['task_statements'][data['task_statements']['Data Value'] >= min_values['tasks']]
-    work_activities = data['work_activities'][data['work_activities']['Data Value'] >= min_values['work_activities']]
-    tools_used = data['tools_used'][data['tools_used']['Data Value'] >= min_values['tools']]
-    work_context = data['work_context'][data['work_context']['Data Value'] >= min_values['work_context']]
-
-    return {
-        "abilities": abilities,
-        "skills": skills,
-        "tasks": tasks,
-        "work_activities": work_activities,
-        "tools_used": tools_used,
-        "work_context": work_context
-    }
+# Merge data with scale reference for better context
+def merge_with_scale_reference(data, scale_reference):
+    # Merge the DataFrame with scale reference to clarify what the scale values mean
+    data_with_scale = data.merge(scale_reference, how="left", left_on="Scale ID", right_on="Scale ID")
+    return data_with_scale
 
 # Streamlit app UI
 st.sidebar.header("Filter Data by Categories and Scales")
@@ -64,6 +54,34 @@ min_values = {
     'tools': min_tools_value,
     'work_context': min_work_context_value
 }
+
+# Merge each dataset with the scale reference
+abilities_with_scale = merge_with_scale_reference(data['abilities'], data['scale_reference'])
+skills_with_scale = merge_with_scale_reference(data['skills'], data['scale_reference'])
+tasks_with_scale = merge_with_scale_reference(data['task_statements'], data['scale_reference'])
+work_activities_with_scale = merge_with_scale_reference(data['work_activities'], data['scale_reference'])
+tools_with_scale = merge_with_scale_reference(data['tools_used'], data['scale_reference'])
+work_context_with_scale = merge_with_scale_reference(data['work_context'], data['scale_reference'])
+
+# Function to filter data based on Data Values and show detailed results
+def filter_data_by_value(data, min_values):
+    filtered_abilities = data['abilities'][data['abilities']['Data Value'] >= min_values['abilities']]
+    filtered_skills = data['skills'][data['skills']['Data Value'] >= min_values['skills']]
+    filtered_tasks = data['task_statements'][data['task_statements']['Data Value'] >= min_values['tasks']]
+    filtered_work_activities = data['work_activities'][data['work_activities']['Data Value'] >= min_values['work_activities']]
+    filtered_tools = data['tools_used'][data['tools_used']['Data Value'] >= min_values['tools']]
+    filtered_work_context = data['work_context'][data['work_context']['Data Value'] >= min_values['work_context']]
+    
+    return {
+        "abilities": filtered_abilities,
+        "skills": filtered_skills,
+        "tasks": filtered_tasks,
+        "work_activities": filtered_work_activities,
+        "tools_used": filtered_tools,
+        "work_context": filtered_work_context
+    }
+
+# Apply the filter function with minimum values
 filtered_data = filter_data_by_value(data, min_values)
 
 # Display the filtered results
@@ -90,43 +108,18 @@ st.write(filtered_data['work_activities'])
 st.subheader("Tools Used")
 st.write(filtered_data['tools_used'])
 
-# Display filtered work context (which will help assess dangerous work or automation potential)
+# Display filtered work context (to assess if the occupation involves dangerous or automation-suitable work)
 st.subheader("Work Context (Danger Assessment)")
 st.write(filtered_data['work_context'])
 
-# Insights on Automation:
-st.subheader("Automation Insights")
+# Show the scale references for each filtered entry
+st.subheader("Scale References")
+st.write("Scale names and their descriptions help understand what the Data Value represents.")
 
-# Assessing Automation based on the filtered data
-def assess_automation(work_context_data):
-    # Example: If work context involves dangerous work (e.g., exposure to hazardous conditions), automation might be more viable
-    dangerous_work = work_context_data[work_context_data['Work Context Element Name'].str.contains('Hazardous', case=False)]
-    
-    if not dangerous_work.empty:
-        st.write("**This occupation involves hazardous work.** Automating this job could significantly reduce risk to human workers.")
-    else:
-        st.write("**This occupation does not involve hazardous work**. Automation could be useful for efficiency but would require more precision, speed, etc.")
-
-    return dangerous_work
-
-# Apply the automation assessment function
-dangerous_work = assess_automation(filtered_data['work_context'])
-
-# Additional automation insights based on abilities, tools, and tasks
-def analyze_automation_potential(abilities_data, tools_data):
-    # Look at abilities required and tools used in context of automation potential
-    speed_ability = abilities_data[abilities_data['Abilities Element Name'].str.contains('Speed', case=False)]
-    precision_ability = abilities_data[abilities_data['Abilities Element Name'].str.contains('Precision', case=False)]
-    
-    if not speed_ability.empty:
-        st.write("Automation might require **high speed** abilities.")
-    if not precision_ability.empty:
-        st.write("Automation might require **high precision** abilities.")
-    
-    if not tools_data.empty:
-        st.write("**Tools used** in this occupation might also indicate automation suitability.")
-        st.write(tools_data)
-
-# Apply the automation analysis function
-analyze_automation_potential(filtered_data['abilities'], filtered_data['tools_used'])
+st.write(abilities_with_scale[['Abilities Element Name', 'Scale Name', 'Data Value']])
+st.write(skills_with_scale[['Skills Element Name', 'Scale Name', 'Data Value']])
+st.write(tasks_with_scale[['Task Title', 'Scale Name', 'Data Value']])
+st.write(work_activities_with_scale[['Work Activities Element Name', 'Scale Name', 'Data Value']])
+st.write(tools_with_scale[['Example', 'Scale Name', 'Data Value']])
+st.write(work_context_with_scale[['Work Context Element Name', 'Scale Name', 'Data Value']])
 
