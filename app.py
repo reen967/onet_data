@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load the CSV file with O*NET data
-@st.cache
+@st.cache_data
 def load_occupation_data(file_path, occupation_code):
     try:
         # Read the CSV file
