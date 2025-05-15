@@ -1,46 +1,76 @@
 import streamlit as st
 import pandas as pd
 
-# Load the CSV file with O*NET data
-@st.cache_data
-def load_occupation_data(file_path, occupation_code):
-    try:
-        # Read the CSV file
-        df = pd.read_csv(file_path)
-        
-        # Ensure the column exists and filter based on the occupation code
-        if 'O*NET-SOC Code' not in df.columns:
-            st.error("The 'O*NET-SOC Code' column is missing in the CSV file.")
-            return None
-        
-        # Filter the data for the specific occupation code
-        occupation_data = df[df['O*NET-SOC Code'] == occupation_code]
-        
-        # Return the occupation data if found
-        if not occupation_data.empty:
-            return occupation_data
-        else:
-            st.error(f"No data found for occupation code {occupation_code}")
-            return None
-        
-    except Exception as e:
-        st.error(f"Error loading CSV: {e}")
-        return None
-
-# Streamlit app UI
-st.sidebar.header("Search for an Occupation")
-occupation_code = st.sidebar.text_input("Enter the O*NET-SOC Code", "11-1011.00")  # Default code for testing
-
-# CSV file path (use the raw URL from GitHub)
-file_path = "https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv"
-
-if occupation_code:
-    # Load and display the occupation data based on the occupation code
-    occupation_data = load_occupation_data(file_path, occupation_code)
+# Load data
+@st.cache
+def load_data():
+    # Load the linked data file (adjust the path as needed)
+    linked_data = pd.read_csv('linked_data.csv')
     
-    if occupation_data is not None:
-        # Display the occupation data if found
-        st.title(occupation_data.iloc[0]["Title"])  # Display the Title of the occupation
-        st.write(f"**Description**: {occupation_data.iloc[0]['Description']}")  # Display the Description
-    else:
-        st.write("No data available.")
+    # Load other CSV files if needed for further exploration
+    abilities = pd.read_csv('abilities.csv')
+    work_activities = pd.read_csv('work_activities.csv')
+    skills = pd.read_csv('skills.csv')
+    tasks = pd.read_csv('task_statements.csv')
+    tools_used = pd.read_csv('tools_used.csv')
+    
+    return linked_data, abilities, work_activities, skills, tasks, tools_used
+
+linked_data, abilities, work_activities, skills, tasks, tools_used = load_data()
+
+# Sidebar for navigation
+st.sidebar.title("Data Exploration App")
+sidebar_selection = st.sidebar.radio("Select Data to Explore", ["Linked Data", "Abilities", "Work Activities", "Skills", "Tasks", "Tools Used"])
+
+# Show Linked Data (default view)
+if sidebar_selection == "Linked Data":
+    st.title("Linked Data Overview")
+    st.write("Explore the connections between occupations, abilities, tasks, and more.")
+    st.write(linked_data)
+
+# Show Abilities Data
+elif sidebar_selection == "Abilities":
+    st.title("Abilities Data")
+    st.write("Explore abilities related to occupations.")
+    st.write(abilities)
+
+# Show Work Activities Data
+elif sidebar_selection == "Work Activities":
+    st.title("Work Activities Data")
+    st.write("Explore work activities related to occupations.")
+    st.write(work_activities)
+
+# Show Skills Data
+elif sidebar_selection == "Skills":
+    st.title("Skills Data")
+    st.write("Explore skills related to occupations.")
+    st.write(skills)
+
+# Show Tasks Data
+elif sidebar_selection == "Tasks":
+    st.title("Tasks Data")
+    st.write("Explore tasks related to occupations.")
+    st.write(tasks)
+
+# Show Tools Used Data
+elif sidebar_selection == "Tools Used":
+    st.title("Tools Used Data")
+    st.write("Explore tools used in various occupations.")
+    st.write(tools_used)
+
+# Display a specific link between elements
+st.sidebar.title("Explore Relationships")
+entity_1 = st.sidebar.selectbox("Select First Entity", ['Abilities', 'Work Activities', 'Skills', 'Tasks', 'Tools Used'])
+entity_2 = st.sidebar.selectbox("Select Second Entity", ['Abilities', 'Work Activities', 'Skills', 'Tasks', 'Tools Used'])
+
+if entity_1 and entity_2:
+    st.title(f"Relationships between {entity_1} and {entity_2}")
+    selected_links = linked_data[(linked_data['Entity_1'] == entity_1) & (linked_data['Entity_2'] == entity_2)]
+    st.write(selected_links)
+
+# Add some interactivity to explore more options
+st.sidebar.title("Other Options")
+if st.sidebar.button("Show Linked Data Summary"):
+    st.write("Summary of Linked Data:")
+    st.write(linked_data.describe())
+
