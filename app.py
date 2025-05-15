@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load all CSV files into pandas DataFrames
-@st.cache
+@st.cache_data
 def load_data():
     # Load all CSV files into pandas DataFrames
     occupation_data = pd.read_csv("https://raw.githubusercontent.com/reen967/onet_data/main/occupation_data.csv")
