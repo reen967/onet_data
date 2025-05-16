@@ -3,7 +3,9 @@ import os
 
 def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
     tasks = pd.read_csv(os.path.join(root, "task_statements.csv"))
-    task_ratings = pd.read_csv(os.path.join(root, "task_ratings.csv"))
+    task_ratings_1 = pd.read_csv(os.path.join(root, "task_ratings_1.csv"))
+    task_ratings_2 = pd.read_csv(os.path.join(root, "task_ratings_2.csv"))
+    task_ratings = pd.concat([task_ratings_1, task_ratings_2], ignore_index=True)
     task_freq_scale = pd.read_csv(os.path.join(root, "task_frequency_scale.csv"))
     tasks_to_dwa = pd.read_csv(os.path.join(root, "tasks_to_dwa.csv"))
     dwa_map = pd.read_csv(os.path.join(root, "work_activities_to_iwa_to_dwa.csv"))
