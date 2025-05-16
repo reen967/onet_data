@@ -1,13 +1,13 @@
 import pandas as pd
 
 # Load all CSVs into pandas DataFrames
-abilities = pd.read_csv('abilities.csv')
-abilities_descriptions = pd.read_csv('abilities_descriptions.csv')
-abilities_to_work_activities = pd.read_csv('abilities_to_work_activities.csv')
-work_activities = pd.read_csv('work_activities.csv')
-skills = pd.read_csv('skills.csv')
-occupation_data = pd.read_csv('occupation_data.csv')
-work_context_categories = pd.read_csv('work_context_categories.csv')
+abilities = pd.read_csv('data/abilities.csv')
+abilities_descriptions = pd.read_csv('data/abilities_descriptions.csv')
+abilities_to_work_activities = pd.read_csv('data/abilities_to_work_activities.csv')
+work_activities = pd.read_csv('data/work_activities.csv')
+skills = pd.read_csv('data/skills.csv')
+occupation_data = pd.read_csv('data/occupation_data.csv')
+work_context_categories = pd.read_csv('data/work_context_categories.csv')
 
 # Merging the data
 abilities_with_descriptions = pd.merge(abilities, abilities_descriptions, on='Abilities Element ID', how='inner')
