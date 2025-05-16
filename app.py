@@ -5,10 +5,10 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Load CSV files
-abilities = pd.read_csv('abilities.csv')
-work_context_categories = pd.read_csv('work_context_categories.csv')
-frequency_of_task_categories = pd.read_csv('frequency_of_task_categories.csv')
-scales_reference = pd.read_csv('scales_reference.csv')
+abilities = pd.read_csv('data/abilities.csv')
+work_context_categories = pd.read_csv('data/work_context_categories.csv')
+frequency_of_task_categories = pd.read_csv('data/frequency_of_task_categories.csv')
+scales_reference = pd.read_csv('data/scales_reference.csv')
 
 # Merge the data to easily work with the scales
 abilities_with_scale = pd.merge(abilities, scales_reference, on='Scale ID', how='inner')
