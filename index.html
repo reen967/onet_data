@@ -1,57 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter Occupations</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <title>O*NET Explorer</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input { width: 300px; padding: 0.5em; }
+    .occupation { margin-bottom: 2em; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Filter Occupations Based on Data Values</h1>
-        <form action="/filter_results" method="POST">
-            <!-- Dropdown for Scale Name -->
-            <label for="scale_name">Select Scale Name:</label>
-            <select name="scale_name" id="scale_name">
-                {% for scale_name in scale_names %}
-                    <option value="{{ scale_name }}">{{ scale_name }}</option>
-                {% endfor %}
-            </select>
-
-            <!-- Data Value Input -->
-            <label for="data_value">Select Data Value Threshold:</label>
-            <input type="number" name="data_value" id="data_value" step="0.1" value="1" min="0">
-
-            <!-- Work Context Element Name Filter (if applicable) -->
-            {% if context_options %}
-                <label for="context_element_name">Select Work Context Element:</label>
-                <select name="context_element_name" id="context_element_name">
-                    {% for context in context_options %}
-                        <option value="{{ context }}">{{ context }}</option>
-                    {% endfor %}
-                </select>
-            {% endif %}
-
-            <button type="submit">Apply Filters</button>
-        </form>
-
-        <!-- Display Filtered Results -->
-        {% if filtered_abilities %}
-            <h2>Filtered Abilities</h2>
-            <div>{{ filtered_abilities | safe }}</div>
-        {% endif %}
-        
-        {% if filtered_work_context %}
-            <h2>Filtered Work Context</h2>
-            <div>{{ filtered_work_context | safe }}</div>
-        {% endif %}
-
-        {% if filtered_frequency %}
-            <h2>Filtered Frequency of Tasks</h2>
-            <div>{{ filtered_frequency | safe }}</div>
-        {% endif %}
-    </div>
+  <h1>O*NET Occupation Explorer</h1>
+  <input type="text" id="searchBox" placeholder="Search job title..." />
+  <div id="results"></div>
 </body>
 </html>
+
 
 
