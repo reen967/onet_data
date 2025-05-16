@@ -2,8 +2,8 @@ import pandas as pd
 
 # Load the CSV files from the 'data' folder
 abilities = pd.read_csv('data/abilities.csv')
-abilities_descriptions = pd.read_csv('data/abilities_descriptions.csv')
-abilities_to_work_activities = pd.read_csv('data/abilities_to_work_activities.csv')
+abilities_descriptions = pd.read_csv('abilities_descriptions.csv')
+abilities_to_work_activities = pd.read_csv('abilities_to_work_activities.csv')
 work_activities = pd.read_csv('data/work_activities.csv')
 scales_reference = pd.read_csv('data/scales_reference.csv')
 frequency_of_task_categories = pd.read_csv('data/frequency_of_task_categories.csv')
