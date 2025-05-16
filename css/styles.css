@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-right: 2px solid #ccc;
+}
+
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+
+input, select, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
