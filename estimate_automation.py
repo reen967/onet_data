@@ -13,8 +13,11 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
     work_context = pd.concat([wc1, wc2], ignore_index=True)
     context_categories = pd.read_csv(os.path.join(root, "work_context_categories.csv"))
     scales = pd.read_csv(os.path.join(root, "scales_reference.csv"))
+    anchors = pd.read_csv(os.path.join(root, "level_scale_anchors.csv"))
 
     scale_max = scales.set_index("Scale ID")["Maximum"].to_dict()
+    anchor_map = anchors[anchors["Scale Name"] == "Level"].set_index(["Abilities Element Name", "Anchor Value"])["Anchor Description"].to_dict()
+
     soc_tasks = tasks[tasks["O*NET-SOC Code"] == soc_code]
     result_rows = []
 
@@ -36,10 +39,15 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
             lambda x: x["Data Value"] / scale_max.get(x["Scale ID"], 5), axis=1
         )
 
-        ability_summary = ", ".join([
-            f"{row['Abilities Element Name']} ({round(row['Norm Score'], 2)})"
-            for _, row in ability_scores.iterrows()
-        ])
+        ability_with_anchor = []
+        for _, row in ability_scores.iterrows():
+            name = row["Abilities Element Name"]
+            norm = round(row["Norm Score"], 2)
+            val = round(row["Data Value"])
+            desc = anchor_map.get((name, val), "")
+            ability_with_anchor.append(f"{name} ({norm}) - {desc}")
+
+        ability_summary = "; ".join(ability_with_anchor)
 
         ability_contexts = abilities_context[abilities_context["Abilities Element Name"].isin(ability_names)]
         context_traits = work_context[(work_context["O*NET-SOC Code"] == soc_code) &
@@ -52,16 +60,16 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
         )
 
         context_summary = ", ".join([
-            f"{row['Work Context Element Name']} ({row['Work Context Element Name']})"
+            f"{row['Work Context Element Name']} ({row['Category']})"
             for _, row in context_with_labels.iterrows()
         ])
 
-        social_demand = context_with_labels[context_with_labels["Work Context Element Name"].str.contains("Social", na=False)]["Data Value"].mean()
-        physical_demand = context_with_labels[context_with_labels["Work Context Element Name"].str.contains("Physical", na=False)]["Data Value"].mean()
+        social_demand = context_with_labels[context_with_labels["Category"].str.contains("Social", na=False)]
+        physical_demand = context_with_labels[context_with_labels["Category"].str.contains("Physical", na=False)]
 
         cog_load = ability_scores["Norm Score"].mean() if not ability_scores.empty else 0.5
-        social_load = social_demand if not pd.isna(social_demand) else 2.5
-        phys_load = physical_demand if not pd.isna(physical_demand) else 2.5
+        social_load = social_demand["Data Value"].mean() if not social_demand.empty else 2.5
+        phys_load = physical_demand["Data Value"].mean() if not physical_demand.empty else 2.5
 
         automation_score = round(1 - ((cog_load + (social_load / 5) + (phys_load / 5)) / 3), 3)
 
@@ -70,8 +78,8 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
             "Work Activities": ", ".join(work_acts),
             "Abilities": ability_summary,
             "Context Traits": context_summary,
-            "Social Demand": round(social_load, 2) if not pd.isna(social_demand) else "N/A",
-            "Physical Demand": round(phys_load, 2) if not pd.isna(physical_demand) else "N/A",
+            "Social Demand": round(social_load, 2) if not pd.isna(social_load) else "N/A",
+            "Physical Demand": round(phys_load, 2) if not pd.isna(phys_load) else "N/A",
             "Cognitive Load": round(cog_load, 2),
             "Estimated Automation Likelihood (0–1)": automation_score
         })
