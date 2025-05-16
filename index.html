@@ -10,6 +10,7 @@
     <div class="container">
         <h1>Filter Occupations Based on Data Values</h1>
         <form action="/filter_results" method="POST">
+            <!-- Dropdown for Scale Name -->
             <label for="scale_name">Select Scale Name:</label>
             <select name="scale_name" id="scale_name">
                 {% for scale_name in scale_names %}
@@ -17,12 +18,24 @@
                 {% endfor %}
             </select>
 
+            <!-- Data Value Input -->
             <label for="data_value">Select Data Value Threshold:</label>
             <input type="number" name="data_value" id="data_value" step="0.1" value="1" min="0">
+
+            <!-- Work Context Element Name Filter (if applicable) -->
+            {% if context_options %}
+                <label for="context_element_name">Select Work Context Element:</label>
+                <select name="context_element_name" id="context_element_name">
+                    {% for context in context_options %}
+                        <option value="{{ context }}">{{ context }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
 
             <button type="submit">Apply Filters</button>
         </form>
 
+        <!-- Display Filtered Results -->
         {% if filtered_abilities %}
             <h2>Filtered Abilities</h2>
             <div>{{ filtered_abilities | safe }}</div>
@@ -40,4 +53,5 @@
     </div>
 </body>
 </html>
+
 
