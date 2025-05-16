@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automate Feasibility Analyzer</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Filter Occupations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Automate Feasibility Analyzer</h1>
-    
-    <!-- Sidebar Filters -->
-    <div class="sidebar">
-        <h2>Filter Criteria</h2>
-        <label for="occupation">Occupation Code:</label>
-        <input type="text" id="occupation" placeholder="e.g. 11-1011.00">
-        
-        <label for="importance">Importance:</label>
-        <input type="range" id="importance" min="1" max="5" value="3">
-        
-        <label for="level">Level:</label>
-        <input type="range" id="level" min="0" max="7" value="3">
-        
-        <label for="context">Work Context:</label>
-        <select id="context">
-            <option value="physical">Physical</option>
-            <option value="mental">Mental</option>
-            <option value="dangerous">Dangerous</option>
-        </select>
-        
-        <button onclick="applyFilters()">Apply Filters</button>
-    </div>
+    <div class="container">
+        <h1>Filter Occupations Based on Data Values</h1>
+        <form action="/filter_results" method="POST">
+            <label for="scale_name">Select Scale Name:</label>
+            <select name="scale_name" id="scale_name">
+                {% for scale_name in scale_names %}
+                    <option value="{{ scale_name }}">{{ scale_name }}</option>
+                {% endfor %}
+            </select>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <h2>Results</h2>
-        <div id="results"></div>
-    </div>
+            <label for="data_value">Select Data Value Threshold:</label>
+            <input type="number" name="data_value" id="data_value" step="0.1" value="1" min="0">
 
-    <!-- Load JavaScript files -->
-    <script src="js/data_processing.js"></script>
-    <script src="js/filter_and_display.js"></script>
+            <button type="submit">Apply Filters</button>
+        </form>
+
+        {% if filtered_abilities %}
+            <h2>Filtered Abilities</h2>
+            <div>{{ filtered_abilities | safe }}</div>
+        {% endif %}
+        
+        {% if filtered_work_context %}
+            <h2>Filtered Work Context</h2>
+            <div>{{ filtered_work_context | safe }}</div>
+        {% endif %}
+
+        {% if filtered_frequency %}
+            <h2>Filtered Frequency of Tasks</h2>
+            <div>{{ filtered_frequency | safe }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>
+
