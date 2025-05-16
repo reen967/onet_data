@@ -2,6 +2,7 @@ import pandas as pd
 import os
 
 def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
+    # Load all CSVs from root
     tasks = pd.read_csv(os.path.join(root, "task_statements.csv"))
     task_ratings_1 = pd.read_csv(os.path.join(root, "task_ratings_1.csv"))
     task_ratings_2 = pd.read_csv(os.path.join(root, "task_ratings_2.csv"))
@@ -28,12 +29,15 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
         task_id = task_row["Task ID"]
         task_text = task_row["Task Title"]
 
+        # Map to DWA and Work Activities
         dwa_ids = tasks_to_dwa[tasks_to_dwa["Task ID"] == task_id]["DWA ID"].unique()
         work_acts = dwa_map[dwa_map["DWA Element ID"].isin(dwa_ids)]["Work Activities Element Name"].unique()
 
+        # Get abilities tied to those work activities
         relevant_abilities = abilities_link[abilities_link["Work Activities Element Name"].isin(work_acts)]
         ability_names = relevant_abilities["Abilities Element Name"].unique()
 
+        # Get importance scores for those abilities
         ability_scores = abilities[(abilities["O*NET-SOC Code"] == soc_code) &
                                    (abilities["Abilities Element Name"].isin(ability_names)) &
                                    (abilities["Scale Name"] == "Importance")].copy()
@@ -42,20 +46,23 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
             lambda x: x["Data Value"] / scale_max.get(x["Scale ID"], 5), axis=1
         )
 
-        # Add anchor descriptions for abilities
-        anchor_map = anchors[anchors["Scale ID"] == "LV"].sort_values("Anchor Value")
-        anchor_top = anchor_map.groupby("Abilities Element Name").tail(1)
-        ability_scores = ability_scores.merge(
-            anchor_top[["Abilities Element Name", "Anchor Description"]],
-            on="Abilities Element Name",
-            how="left"
+        # Merge with level anchors
+        anchor_lookup = (
+            anchors[anchors["Scale ID"] == "LV"]
+            .sort_values("Anchor Value")
+            .groupby("Abilities Element Name")
+            .last()
+            .reset_index()[["Abilities Element Name", "Anchor Description"]]
         )
+
+        ability_scores = ability_scores.merge(anchor_lookup, on="Abilities Element Name", how="left")
 
         ability_summary = ", ".join([
             f"{row['Abilities Element Name']} ({round(row['Norm Score'], 2)}): {row['Anchor Description']}"
             for _, row in ability_scores.iterrows()
         ])
 
+        # Work context traits + descriptions
         ability_contexts = abilities_context[abilities_context["Abilities Element Name"].isin(ability_names)]
         context_traits = work_context[(work_context["O*NET-SOC Code"] == soc_code) &
                                       (work_context["Work Context Element Name"].isin(ability_contexts["Work Context Element Name"]))]
@@ -75,8 +82,11 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
             for _, row in context_with_labels.iterrows()
         ])
 
-        social_demand = context_with_labels[context_with_labels["Category"].notna() & context_with_labels["Category"].astype(str).str.contains("Social")]["Category"].astype(float).mean()
-        physical_demand = context_with_labels[context_with_labels["Category"].notna() & context_with_labels["Category"].astype(str).str.contains("Physical")]["Category"].astype(float).mean()
+        # Demand indicators
+        social_demand = context_with_labels[context_with_labels["Category"].notna() &
+                                            context_with_labels["Category"].astype(str).str.contains("Social")]["Category"].astype(float).mean()
+        physical_demand = context_with_labels[context_with_labels["Category"].notna() &
+                                              context_with_labels["Category"].astype(str).str.contains("Physical")]["Category"].astype(float).mean()
 
         cog_load = ability_scores["Norm Score"].mean() if not ability_scores.empty else 0.5
         social_load = social_demand if not pd.isna(social_demand) else 2.5
@@ -84,10 +94,14 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
 
         automation_score = round(1 - ((cog_load + (social_load / 5) + (phys_load / 5)) / 3), 3)
 
-        # Add frequency of task
-        task_freq_row = task_ratings[(task_ratings["Task ID"] == task_id) & (task_ratings["Scale ID"] == "FT")]
-        freq_cat = task_freq_row["Category"].values[0] if not task_freq_row.empty else None
+        # Frequency & Level of task
+        freq_row = task_ratings[(task_ratings["Task ID"] == task_id) & (task_ratings["Scale ID"] == "FT")]
+        level_row = task_ratings[(task_ratings["Task ID"] == task_id) & (task_ratings["Scale ID"] == "LV")]
+
+        freq_cat = freq_row["Category"].values[0] if not freq_row.empty else None
         freq_label = task_freq_scale[task_freq_scale["Category"] == freq_cat]["Category Description"].values[0] if freq_cat in task_freq_scale["Category"].values else "Unknown"
+
+        level_value = level_row["Data Value"].values[0] if not level_row.empty else None
 
         result_rows.append({
             "Task": task_text,
@@ -98,7 +112,9 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
             "Physical Demand": round(phys_load, 2) if not pd.isna(physical_demand) else "N/A",
             "Cognitive Load": round(cog_load, 2),
             "Frequency": freq_label,
+            "Level": level_value,
             "Estimated Automation Likelihood (0–1)": automation_score
         })
 
     return pd.DataFrame(result_rows)
+
