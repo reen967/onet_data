@@ -64,11 +64,11 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
         )
 
         social_demand = context_with_labels[
-            context_with_labels["Category"].str.contains("Social", na=False)
+            context_with_labels["Work Context Element Name"].str.contains("Social", na=False)
         ]["Data Value"].mean()
 
         physical_demand = context_with_labels[
-            context_with_labels["Category"].str.contains("Physical", na=False)
+            context_with_labels["Work Context Element Name"].str.contains("Physical", na=False)
         ]["Data Value"].mean()
 
         # Compute automation score
