@@ -43,8 +43,10 @@ def task_automation_breakdown(soc_code: str, root: str = "./") -> pd.DataFrame:
         )
 
         # Add anchor descriptions for abilities
+        anchor_map = anchors[anchors["Scale ID"] == "LV"].sort_values("Anchor Value")
+        anchor_top = anchor_map.groupby("Abilities Element Name").tail(1)
         ability_scores = ability_scores.merge(
-            anchors[anchors["Scale ID"] == "LV"].groupby("Abilities Element Name").apply(lambda g: g.sort_values("Anchor Value").iloc[-1]).reset_index(drop=True)[["Abilities Element Name", "Anchor Description"]],
+            anchor_top[["Abilities Element Name", "Anchor Description"]],
             on="Abilities Element Name",
             how="left"
         )
