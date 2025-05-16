@@ -44,11 +44,11 @@ def estimate_automation(soc_code: str, root: str = "./") -> pd.DataFrame:
     soc_context = work_context[work_context["O*NET-SOC Code"] == soc_code]
     context_with_cat = soc_context.merge(context_categories, on="Work Context Element Name", how="left")
 
-    # Simplified automation likelihood estimation (basic weights)
+  # Simplified automation likelihood estimation (basic weights)
     avg_freq = soc_tasks["Data Value"].mean() if "Data Value" in soc_tasks else 0.5
     avg_ability = soc_abilities["Norm Importance"].mean() if not soc_abilities.empty else 0.5
-    physical_difficulty = context_with_cat[context_with_cat["Category"].str.contains("Physical", na=False)]["Data Value"].mean()
-    social_difficulty = context_with_cat[context_with_cat["Category"].str.contains("Social", na=False)]["Data Value"].mean()
+    physical_difficulty = context_with_cat[context_with_cat["Work Context Element Name"].str.contains("Physical", na=False)]["Data Value"].mean()
+    social_difficulty = context_with_cat[context_with_cat["Work Context Element Name"].str.contains("Social", na=False)]["Data Value"].mean()
 
     # Compute rough automation score (lower means less automatable)
     score = (1 * avg_freq + 0.5 * (1 - avg_ability) + 0.5 * (1 - physical_difficulty / 5) + 0.5 * (1 - social_difficulty / 5)) / 2.5
