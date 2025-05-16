@@ -10,7 +10,7 @@ work_context_categories = pd.read_csv('work_context_categories.csv')
 frequency_of_task_categories = pd.read_csv('frequency_of_task_categories.csv')
 scales_reference = pd.read_csv('scales_reference.csv')
 
-# Merge all relevant tables
+# Merge the data to easily work with the scales
 abilities_with_scale = pd.merge(abilities, scales_reference, on='Scale ID', how='inner')
 work_context_with_scale = pd.merge(work_context_categories, scales_reference, on='Scale ID', how='inner')
 frequency_with_scale = pd.merge(frequency_of_task_categories, scales_reference, on='Scale ID', how='inner')
@@ -23,11 +23,11 @@ def home():
 
 @app.route('/filter_results', methods=['POST'])
 def filter_results():
-    # Get the selected filters from the form
+    # Get the selected scale and filter inputs
     selected_scale_name = request.form['scale_name']
     selected_data_value = float(request.form['data_value'])
 
-    # Filter data based on the selections
+    # Filter data based on selected Scale Name
     filtered_abilities = abilities_with_scale[abilities_with_scale['Scale Name'] == selected_scale_name]
     filtered_abilities = filtered_abilities[filtered_abilities['Data Value'] >= selected_data_value]
 
@@ -37,13 +37,23 @@ def filter_results():
     filtered_frequency = frequency_with_scale[frequency_with_scale['Scale Name'] == selected_scale_name]
     filtered_frequency = filtered_frequency[filtered_frequency['Data Value'] >= selected_data_value]
 
-    # Return the filtered results to the page
+    # Handle dynamic filter for context-based scale (e.g., CXP)
+    context_options = []
+    if selected_scale_name == "Context":
+        context_options = filtered_work_context['Work Context Element Name'].unique()
+
+    # Return the filtered results and context-specific options
     return render_template('index.html', scale_names=scales_reference['Scale Name'].unique(),
                            filtered_abilities=filtered_abilities.to_html(),
                            filtered_work_context=filtered_work_context.to_html(),
                            filtered_frequency=filtered_frequency.to_html(),
                            selected_scale_name=selected_scale_name,
-                           selected_data_value=selected_data_value)
+                           selected_data_value=selected_data_value,
+                           context_options=context_options)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
